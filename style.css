@@ -6,12 +6,17 @@ body, html {
     color: #333;
     display: flex;
     align-items: left;
-    justify-content: center;
+    justify-content: left;
     text-transform: lowercase;
+    flex-direction: column;
 }
 
 .container {
     text-align: left;
+    width: 80%; /* Adjust the width of the container */
+    max-width: 800px; /* Maximum width of the container */
+    padding: 20px; /* Padding around the content */
+    padding-left: 40px; /* Additional padding on the left */
 }
 
 h1 {
@@ -32,4 +37,98 @@ ul {
 ul li {
     text-align: left;
     margin-bottom: 0.5em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Smaller font size for h1 on smaller screens */
+    }
+
+    p, ul li {
+        font-size: 1em; /* Smaller font size for paragraphs and list items on smaller screens */
+    }
+
+    .container {
+        width: 90%; /* Increase the width of the container on smaller screens */
+        padding-left: 20px; /* Adjust left padding for smaller screens */
+    }
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+.experience {
+    margin-top: 20px;
+}
+
+.experience h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.experience p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.skills {
+    font-style: italic;
+    color: #555;
+}
+
+.collapsible {
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 2em;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.collapsible:hover {
+    color: #555; /* Change color on hover */
+}
+
+.collapsible-symbol {
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+/* Rotate symbol when collapsible is active */
+.collapsible.active .collapsible-symbol {
+    transform: rotate(90deg);
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin-bottom: 10px; /* Space between the sentence and links */
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
