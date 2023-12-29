@@ -97,6 +97,15 @@ h2 {
     transition: transform 0.3s ease; /* Smooth transition for rotation */
 }
 
+.shower-thoughts-list {
+    list-style-type: '• '; /* Change symbol for this list */
+    margin-left: 50px; /* Adds indentation to the list */
+}
+
+.shower-thoughts-list li {
+    margin-bottom: 0.5em; /* Adjust spacing between list items if needed */
+}
+
 .content {
     padding: 0 18px;
     display: none;
