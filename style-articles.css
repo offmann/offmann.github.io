@@ -1,0 +1,31 @@
+/* Apply a basic reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Sets the font for the entire document */
+    line-height: 1.6; /* Improves readability */
+    padding: 20px; /* Adds some padding around the content */
+    max-width: 800px; /* Sets a max width for the content */
+    margin: auto; /* Centers the content horizontally */
+    background-color: #f8f8f8; /* Sets a light background color */
+    color: #333; /* Sets the text color */
+}
+
+h1 {
+    text-align: center; /* Centers the headings */
+    margin-top: 20px; /* Adds top margin for spacing */
+    margin-bottom: 10px; /* Adds bottom margin for spacing */
+}
+
+h1, h3 {
+    text-align:left
+}
+
+p {
+    text-align: justify; /* Justifies the paragraph text */
+    margin-bottom: 20px; /* Adds bottom margin for spacing */
+}
