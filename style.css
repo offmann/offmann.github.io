@@ -39,6 +39,41 @@ ul li {
     margin-bottom: 0.5em;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333; /* Adds a solid line at the bottom */
+}
+
+.profile-picture {
+    width: 200px; /* Increased size */
+    height: auto; /* Keeps the aspect ratio intact */
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.navigation-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navigation-menu li {
+    margin-left: 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navigation-menu a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     h1 {
