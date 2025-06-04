@@ -5,8 +5,8 @@ body, html {
     background-color: #f0f0f0;
     color: #333;
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: flex-start;
+    justify-content: flex-start;
     text-transform: lowercase;
     flex-direction: column;
 }
