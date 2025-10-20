@@ -23,6 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'IBM Plex Mono', monospace; }
+    /* Simple line clamp utility for testimonials */
+    .clamp-5 { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -102,76 +104,75 @@
     </div>
   </section>
 
-<!-- Selected Work with featured items and demo column -->
+<!-- Selected Work as 2x2 grid matching service cards style -->
 <section id="results" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-semibold mb-12 text-center">Selected Work</h2>
 
-    <div class="md:flex md:space-x-8 md:items-stretch">
-      <!-- Left: work cards (feature Awin + affiliate.ai) -->
-      <div class="md:w-3/5 space-y-8 h-full flex flex-col">
-        <!-- Featured: Awin -->
-        <div class="p-6 bg-white rounded-2xl shadow ring-1 ring-gray-200 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-2xl font-semibold">Awin AG – AI/ML Staff Engineer</h3>
-            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700">Featured</span>
-          </div>
-          <p class="mt-3">Scaled RAG chatbots, enhanced forecasting, and mentored AI engineers across the org.</p>
-          <a href="#awin-demo" class="inline-block mt-4 text-sm underline text-blue-600">Watch demo</a>
-        </div>
-
-        <!-- Featured: affiliate.ai -->
-        <div class="p-6 bg-white rounded-2xl shadow ring-1 ring-gray-200 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-2xl font-semibold">affiliate.ai – AI Engineer</h3>
-            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700">Featured</span>
-          </div>
-          <p class="mt-3">Built Slack & Teams LLM assistants, unified affiliate APIs, and evaluation pipelines.</p>
-        </div>
-
-        <!-- Others -->
-        <div class="p-6 bg-gray-100 rounded-2xl shadow flex-1">
-          <h3 class="text-xl font-semibold">SFEIR – AI Consultant</h3>
-          <p class="mt-2">Led PoCs for semantic search and LLM integration, bridging research and delivery across teams.</p>
-        </div>
-        <div class="p-6 bg-gray-100 rounded-2xl shadow flex-1">
-          <h3 class="text-xl font-semibold">BPCE – Junior Data Scientist</h3>
-          <p class="mt-2">Early career analytics in banking: data reporting, customer segmentation, and report automation.</p>
-        </div>
-        <div class="p-6 bg-gray-100 rounded-2xl shadow flex-1">
-          <h3 class="text-xl font-semibold">Solopreneur – Indie SaaS Founder</h3>
-          <p class="mt-2">Experimenting solo: product ideation, UX design, and full‑stack SaaS development.</p>
-        </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Awin -->
+      <div class="bg-gray-50 shadow rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">Awin AG – AI/ML Staff Engineer</h3>
+        <p class="mb-4">Led org‑wide AI initiatives; scaled RAG chatbots, improved forecasting, and mentored engineers.</p>
+        <details class="text-sm text-gray-700">
+          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+          <ul class="list-disc ml-4 mt-2 space-y-1">
+            <li>Built retrieval pipelines and evaluation framework for RAG chatbot</li>
+            <li>Designed indexing pipelines to curate a robust knowledge base</li>
+            <li>[NLP] Investigated customer cases to identify patterns and fix root causes</li>
+            <li>Improved forecasting and recommender ML models</li>
+            <li>Hired AI‑focused data and QA engineers; shaped AI strategy</li>
+          </ul>
+        </details>
       </div>
 
-      <!-- Right: demo videos (keeps Demos section below intact) -->
-      <aside class="md:w-2/5 mt-10 md:mt-0">
-        <div class="p-6 bg-gray-50 rounded-2xl shadow h-full flex flex-col">
-          <h3 class="text-lg font-semibold mb-4">Demo videos</h3>
-
-          <!-- Awin demo embed -->
-          <div id="awin-demo" class="mb-6">
-            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden bg-black">
-              <iframe
-                src="https://www.loom.com/embed/b4661e498d714798b118dd146d9031c7"
-                title="Awin Global chatbot & analytics demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-                class="w-full h-64 md:h-72"
-              ></iframe>
-            </div>
-            <p class="mt-2 text-sm text-gray-700">Awin Global chatbot & analytics</p>
-          </div>
-
-          <!-- More demos link list (keeps section below as source of truth) -->
-          <ul class="list-disc ml-5 space-y-2 text-sm text-blue-600">
-            <li><a class="underline" href="#demos">See more demos below</a></li>
-            <li><a class="underline" href="https://www.loom.com/share/ac6ccb3ad95647bf99d8b8a7463eeaee" target="_blank">Artificial Eye – text‑to‑image</a></li>
-            <li><a class="underline" href="https://www.loom.com/share/22a526743d6345bf965a83942549d9a7" target="_blank">Sfeir – LLM PoC & search</a></li>
+      <!-- affiliate.ai -->
+      <div class="bg-gray-50 shadow rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">affiliate.ai – AI Engineer</h3>
+        <p class="mb-4">Shipped Slack/Teams LLM-based bots for affiliate marketing </p>
+        <details class="text-sm text-gray-700">
+          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+          <ul class="list-disc ml-4 mt-2 space-y-1">
+            <li>Implemented LLM features with function calling (LangChain)</li>
+            <li>Designed RAG over SQL/APIs and unstructured sources</li>
+            <li>Built LLM evaluation using LangSmith</li>
+            <li>Developed ETL pipelines for Awin, Impact, CJ, Rakuten, ShareASale</li>
+            <li>Owned product/tech trade‑offs; maintained AWS (Beanstalk, S3, RDS)</li>
           </ul>
-        </div>
-      </aside>
+        </details>
+      </div>
+
+      <!-- SFEIR -->
+      <div class="bg-gray-50 shadow rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">SFEIR – Data Science Consultant</h3>
+        <p class="mb-4">Led PoCs around NLP & Customer Segmentation</p>
+        <details class="text-sm text-gray-700">
+          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+          <ul class="list-disc ml-4 mt-2 space-y-1">
+            <li>Facilitated scoping workshops with business stakeholders</li>
+            <li>Built training, prediction and evaluation pipelines</li>
+            <li>Deployed models in batch and real‑time</li>
+            <li>Designed KPIs and dashboards for observability</li>
+            <li>Shared knowledge via talks and internal presentations</li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- BPCE -->
+      <div class="bg-gray-50 shadow rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">BPCE – Junior Data Scientist</h3>
+        <p class="mb-4">Delivered NLP and analytics PoCs</p>
+        <details class="text-sm text-gray-700">
+          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+          <ul class="list-disc ml-4 mt-2 space-y-1">
+            <li>Customer scoring/segmentation from ideation to MLOps</li>
+            <li>NLP backend for advisor–client reports; PowerBI dashboarding</li>
+            <li>Mentored intern; shipped REST API for model serving</li>
+            <li>Email intent classification pipeline for satisfaction</li>
+            <li>Evangelised data via workshops and presentations</li>
+          </ul>
+        </details>
+      </div>
     </div>
   </div>
 </section>
@@ -200,14 +201,36 @@
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-semibold mb-12 text-center">Testimonials</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- Example testimonials; replace text as needed -->
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow">
-          <p class="mb-4">“Othman turned our AI vision into a tangible product in record time. His blend of strategy and hands‑on engineering is rare.”</p>
-          <footer class="text-sm text-gray-700">— Head of Product, Awin Global</footer>
+        <!-- Card 1 -->
+        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+          <p class="mb-4 testimonial-text clamp-5">“Othman is a first-class Data Scientist and engineering team member.<br><br>
+He has an excellent work ethic, and unwavering dedication to his colleagues and work.<br><br>
+I had the pleasure of working with him on a new generative AI solution designed to meet the needs of thousands of customers.<br><br>
+At the time of writing (March 2025), building generative AI applications can be highly complex, with a multitude of unknowns and unpredictable outcomes due to the probablistic nature of generative AI models.<br><br>
+As a key member in our team, Othman designed and implemented our evaluations methodology and technology stack. His work has been invaluable to understanding the performance and optimization requirements for our solution. Beyond his technical expertise, Othman is a superb communicator, adept at speaking to counterparts at all levels in our organization, from the most technically proficient, to critical non-technical stakeholders.<br><br>
+I am well aware that Othman's skillsets extend far beyond the remit that we have worked together. Beyond the evaluations work, he also conducts deep quantative analysis of unstructured data to obtain meaningful business insights.<br><br>
+I highly recommend Othman as an experienced and trusted colleague.”</p>
+          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+          <footer class="mt-4 text-sm text-gray-700">— James Bentley, AI Strategy Director, Awin Global</footer>
         </blockquote>
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow">
-          <p class="mb-4">“He quickly integrated complex affiliate APIs with LLMs. We now answer partner questions in seconds rather than hours.”</p>
-          <footer class="text-sm text-gray-700">— Co‑founder, affiliate.ai</footer>
+        <!-- Card 2 -->
+        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+          <p class="mb-4 testimonial-text clamp-5">“Othman is in the top 1% of engineers and humans I have ever worked with. If you are lucky enough to have the opportunity to do so, work with Othman.”</p>
+          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+          <footer class="mt-4 text-sm text-gray-700">— Rob Berrisford, CEO, affiliate.ai</footer>
+        </blockquote>
+        <!-- Card 3 -->
+        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+          <p class="mb-4 testimonial-text clamp-5">“Othman est quelqu'un de curieux, autonome, qui a à cœur de réaliser ses projets le mieux possible, et que ceux-ci aient un impact réel dans les métiers utilisateurs.<br><br>
+Il n'hésite pas à partager son savoir qu'il acquiert par de l'autoformation permanente, en tant que datascientist et technophile avéré.”</p>
+          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+          <footer class="mt-4 text-sm text-gray-700">— Marie Lefebvre, Directrice de projets Data / Engagement Manager, BPCE</footer>
+        </blockquote>
+        <!-- Card 4 -->
+        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+          <p class="mb-4 testimonial-text clamp-5">“Othman est un collaborateur brillant et intelligent. Il est autonome et créatif dans ses projets. A l'aise à l'oral et doté d'un vrai sens de la pédagogie il sait rendre accessible ses projets afin d'acculturer son auditoire. C'est un vrai plaisir de travailler avec lui au quotidien.”</p>
+          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+          <footer class="mt-4 text-sm text-gray-700">— Léa Vanbeversluys, Directrice E‑Business, BPCE</footer>
         </blockquote>
       </div>
     </div>
@@ -239,6 +262,21 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Toggle clamp for testimonials to handle varied lengths
+    document.querySelectorAll('.testimonial-card').forEach(function(card) {
+      var p = card.querySelector('.testimonial-text');
+      var btn = card.querySelector('.toggle-clamp');
+      if (!p || !btn) return;
+      // Hide toggle if text fits within clamp
+      if (p.scrollHeight <= p.clientHeight + 1) {
+        btn.style.display = 'none';
+      }
+      btn.addEventListener('click', function() {
+        var clamped = p.classList.toggle('clamp-5');
+        btn.textContent = clamped ? 'Read more' : 'Show less';
+        btn.setAttribute('aria-expanded', (!clamped).toString());
+      });
+    });
   </script>
 </body>
 </html>
