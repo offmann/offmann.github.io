@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datasets Creation at Scale – Jottings</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-sm underline">← Back</a>
+      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">Datasets Creation at Scale</h1>
+        <p class="text-sm text-gray-600">Jottings</p>
+      </header>
+
+      <section class="space-y-6 leading-relaxed">
+        <p>Using LLMs in bulk to enrich datasets is still underrated. With structured outputs, you can add useful columns at scale to describe data better, analyze faster, and speed up feature engineering.</p>
+
+        <p>Pattern: one row in, one structured object out. Each row is an input to an LLM call, and the output matches a schema you define (JSON). My go‑to library for this is <a href="https://github.com/567-labs/instructor" class="underline text-blue-600"><em>instructor</em></a>.</p>
+
+        <p>Quality depends on three things:</p>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>Input + prompt:</strong> Vague prompts yield inconsistent outputs; over‑specified prompts overfit and break on high‑variance data.</li>
+          <li><strong>Schema design:</strong> Attribute names matter. Make them clear and informative to guide extraction.</li>
+          <li><strong>Model reasoning:</strong> Stateless runs across tens of thousands of rows introduce drift; expect some inconsistency.</li>
+        </ul>
+
+        <p>Practical trick: run the job twice with two different models and keep rows where both agree. It’s a simple agreement‑based filter that lifts reliability without heavy post‑processing.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-600 border-t border-gray-200">
+    <p>&copy; <span id="year"></span> Othman Bouzahzah</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
