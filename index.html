@@ -59,8 +59,8 @@
       <h1 class="text-4xl md:text-6xl font-bold mb-6">AI & Data Science Consulting</h1>
       <p class="text-lg md:text-2xl mb-8">Hands‑on LLM engineering & data pipelines<br>
         <p class="text-lg md:text-2xl mb-8"><br>
-      <a href="https://calendly.com/othmanbouzahzah/15min" class="inline-block bg-black text-white px-6 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 30‑min call</a>
-      <a href="articles/index.html" class="mt-3 inline-block bg-gray-200 text-gray-900 px-6 py-4 rounded-lg text-lg hover:bg-gray-300">Read what's on my mind</a>
+      <a id="cta-hero-book-call" href="https://calendly.com/othmanbouzahzah/15min" class="inline-block bg-black text-white px-6 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 30‑min call</a>
+      <a id="cta-hero-read-mind" href="articles/index.html" class="mt-3 inline-block bg-gray-200 text-gray-900 px-6 py-4 rounded-lg text-lg hover:bg-gray-300">Read what's on my mind</a>
     </div>
   </section>
 
@@ -295,6 +295,23 @@ Il n'hésite pas à partager son savoir qu'il acquiert par de l'autoformation pe
         btn.setAttribute('aria-expanded', (!clamped).toString());
       });
     });
+
+    function trackCtaClick(elementId, eventLabel) {
+      var el = document.getElementById(elementId);
+      if (!el) return;
+      el.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_click', {
+            event_category: 'engagement',
+            event_label: eventLabel,
+            value: 1
+          });
+        }
+      });
+    }
+
+    trackCtaClick('cta-hero-book-call', 'hero_book_call');
+    trackCtaClick('cta-hero-read-mind', 'hero_read_articles');
   </script>
 </body>
 </html>
