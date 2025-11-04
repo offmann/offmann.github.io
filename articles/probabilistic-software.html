@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building LLM Software Lives Between Two Worlds – Jottings</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-S1X0SRBPXN');
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+  
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Minimal header -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="./index.html" class="text-sm underline">← Back</a>
+      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">Building LLM Software Lives Between Two Worlds</h1>
+        <p class="text-sm text-gray-600">Jottings • Nov 4, 2025</p>
+      </header>
+
+      <section class="space-y-6 leading-relaxed">
+        <p>Classic software is deterministic. You separate storage from compute, data from process, and you get repeatable behavior. LLM apps add a probabilistic core into that tidy stack. They sit between data science and traditional engineering. If you live on one side, you have to pick up habits from the other.</p>
+
+        <p>Below is a short field guide: what changes, what actually moves the needle, why projects fail, and how to run a tight build-and-evaluate loop that makes this stuff reliable.</p>
+
+        <h2 class="text-xl font-semibold">Old vs. probabilistic software (mindset + architecture)</h2>
+        <p>In classic systems you can assume the same input yields the same output. With LLMs, the same input can produce different outputs and can degrade as the surrounding context changes. Treat the model like a powerful but flaky coworker with a short-term memory.</p>
+
+        <p>A practical split that works:</p>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>Database:</strong> source of truth. Facts, policies, user state, and logs live outside the model.</li>
+          <li><strong>LLM:</strong> orchestrator and sometimes worker. It plans, routes, and synthesizes. It calls tools and fetches data, then drafts an answer.</li>
+          <li><strong>Context window:</strong> working memory. Put only what is needed for this step. Do not treat it as a hard drive.</li>
+          <li><strong>External memory:</strong> long-term recall. Use retrieval over curated stores for knowledge and history.</li>
+        </ul>
+
+        <p>Design as if you were building around a flaky RPC: add retries, timeouts, idempotency, and guardrails. Keep boundaries sharp. The model is not the system. The system is the model plus the rules around it.</p>
+
+        <h2 class="text-xl font-semibold">What actually moves the needle in LLM apps</h2>
+        <p>Most wins do not come from swapping to a bigger model. They come from making the surrounding system legible and controlled.</p>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>Structured outputs.</strong> Ask for JSON that matches a schema, validate it, and retry on failure. This shrinks a big class of downstream errors.</li>
+          <li><strong>High-quality retrieval.</strong> Clean your corpus, chunk by meaning, add headings and metadata, deduplicate near-duplicates, and store provenance so answers can cite sources. Add query rewriting and reranking before you consider a model change.</li>
+          <li><strong>Tight prompts and templates.</strong> For multi-step deliverables (reports, emails, forms), give explicit formats and examples. The less the model guesses, the better it behaves.</li>
+          <li><strong>Slice-aware thinking.</strong> Identify fragile cases early: dates, prices, IDs, tables, multi-hop instructions, and policy-guarded content. Write targeted checks for them.</li>
+          <li><strong>Observability from day one.</strong> Log traces, tokens, latency, cost, retrieved chunks, and tool calls. If you cannot see it, you cannot improve it.</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold">Why projects fail (recurring anti-patterns)</h2>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>Tools-first, evals-later.</strong> Teams buy frameworks and dashboards and only then ask what “good” means. Start with concrete failure modes from real transcripts.</li>
+          <li><strong>Letting the model be memory.</strong> Packing long histories into prompts causes drift, leakage, and cost spikes. Move stable facts to external stores and fetch them.</li>
+          <li><strong>Retrieval blind spots.</strong> Poor chunking, noisy text, stale indices, or missing metadata lead to hallucinations that are actually data issues.</li>
+          <li><strong>Eval mismatch with humans.</strong> If your score does not track user satisfaction, you will optimize the wrong thing.</li>
+          <li><strong>Security gaps in agent flows.</strong> Untrusted inputs plus tool access plus the ability to change state is dangerous. Reduce capabilities, isolate tools, and require approval for sensitive actions.</li>
+          <li><strong>Over-automation too early.</strong> Start with a narrow job and a deterministic workflow. Add autonomy only where it earns its keep.</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold">Shipping well: evals, retrieval, and structured outputs</h2>
+        <p>Think process, not platform. The goal is agreement between your evaluation and what users consider “good.”</p>
+        <ol class="list-decimal ml-5 space-y-2">
+          <li>
+            <p><strong>Build an error taxonomy.</strong> Read real sessions. Label failures in plain language: wrong fact, missing citation, format error, bad tone, unsafe action, wrong tool, stale data. This becomes your checklist.</p>
+          </li>
+          <li>
+            <p><strong>Write binary checks for each error.</strong> Prefer pass/fail over vague scores. Examples: “JSON matches schema,” “All IDs present,” “Every citation corresponds to retrieved text,” “No future-dated claims,” “No hidden instructions executed.”</p>
+          </li>
+          <li>
+            <p><strong>Separate retrieval and generation.</strong> Measure retrieval precision/recall independently from answer faithfulness/correctness. If retrieval is weak, fix the index and queries first. If generation is unfaithful, tighten prompts, add constrained decoding, or post-validate facts against retrieved text.</p>
+          </li>
+          <li>
+            <p><strong>Mix offline and online signals.</strong></p>
+            <p><strong>Offline:</strong> a small golden set, synthetic expansions for edge cases, and adversarial tests for slices you know are brittle.</p>
+            <p><strong>Online:</strong> shadow runs on real traffic, pre/post rollouts with deltas on quality, latency, and cost. Block launches if key slices regress.</p>
+          </li>
+          <li>
+            <p><strong>Enforce structured outputs.</strong> Define the schema before you prompt. Validate strictly. On failure, repair or reprompt with the error message. For long outputs, use incremental or partial validation to avoid throwing everything away.</p>
+          </li>
+          <li>
+            <p><strong>Keep retrieval practical.</strong> Chunk by semantic units, not fixed size alone. Prefer fewer, higher-quality chunks to many tiny ones. Attach titles, sections, dates, and IDs. Rewrite queries to include constraints the user implied but did not state. Rerank with a lightweight model before you send context to the LLM.</p>
+          </li>
+        </ol>
+
+        <h2 class="text-xl font-semibold">Operator wisdom: where teams get real lift</h2>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>Narrow the job-to-be-done.</strong> A focused assistant with a strong template usually beats a general agent. Define success in one sentence the team agrees on.</li>
+          <li><strong>Design for CAIR: confidence in results.</strong> Show citations, show what was retrieved, and make correction easy. Users forgive minor misses when they can inspect and fix.</li>
+          <li><strong>Own budgets.</strong> Put ceilings on tokens, context size, and tool calls. Track cost per successful task, not cost per call.</li>
+          <li><strong>Fail safe, then fail fast.</strong> If a tool call is risky, require confirmation. If retrieval is empty, return a graceful fallback rather than guessing.</li>
+          <li><strong>Make state explicit.</strong> Keep a typed state object across steps: user intent, constraints, retrieved evidence, intermediate outputs, and decisions taken. Do not hide state inside prompts.</li>
+          <li><strong>Ship with a kill switch and feature flags.</strong> Roll out by cohort. If a new prompt or retriever hurts a slice, turn it off without a redeploy.</li>
+          <li><strong>Continuously prune.</strong> Remove unused tools, stale prompts, and dead branches in the flow. The smaller the surface, the fewer surprises.</li>
+        </ul>
+
+        <p>LLM apps are not pure ML and not pure software. They are systems that wrap a probabilistic engine in deterministic scaffolding. Data people need to adopt software discipline around contracts, observability, and rollouts. Software people need to embrace evaluation, retrieval quality, and slice thinking. Meet in the middle. That is where reliable products come from.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-600 border-t border-gray-200">
+    <p>&copy; <span id="year"></span> Othman Bouzahzah</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
