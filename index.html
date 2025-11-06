@@ -28,7 +28,11 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-S1X0SRBPXN');
+    gtag('config', 'G-S1X0SRBPXN', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    });
   </script>
   <!-- Schema.org JSON‑LD for Person & Service -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Othman Bouzahzah","jobTitle":"AI & Data Science Consultant","url":"https://offmann.github.io/","sameAs":["https://www.linkedin.com/in/othman-bouzahzah"]}</script>
@@ -49,7 +53,7 @@
       <a href="#" class="text-xl font-semibold">Othman Bouzahzah</a>
       <nav class="space-x-6 hidden sm:block" aria-label="Main navigation">
         <a href="#services" class="hover:underline">Services</a>
-        <a href="#results" class="hover:underline">Results</a>
+        <a href="#experience" class="hover:underline">Experience</a>
         <a href="#demos" class="hover:underline">Demos</a>
         <a href="#testimonials" class="hover:underline">Testimonials</a>
         <a href="#about" class="hover:underline">About</a>
@@ -123,7 +127,7 @@
   </section>
 
 <!-- Selected Work as 2x2 grid matching service cards style -->
-<section id="results" class="py-20 bg-white">
+<section id="experience" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-semibold mb-12 text-center">Selected Work</h2>
 
