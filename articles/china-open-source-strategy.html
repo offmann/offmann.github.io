@@ -75,7 +75,7 @@
         <p>In other words, if I am a developer today and I want a strong free base model, it is very likely I will reach for a Chinese model.</p>
 
         <h2 class="text-xl font-semibold">Why I think China is doing this</h2>
-        <h3 class="text-lg font-semibold">Lock in developers and ecosystems</h3>
+        <h2 class="text-base font-semibold">Lock in developers and ecosystems</h2>
         <p>In my view, the first reason is simple. If millions of developers build on your models, you quietly set the standard.</p>
 
         <p>Open weights make it easy to:</p>
@@ -89,7 +89,7 @@
 
         <p>So I think the game is this. Give away the model. Make money on cloud, chips and enterprise projects around it.</p>
 
-        <h3 class="text-lg font-semibold">Turn export controls into a software play</h3>
+        <h4 class="text-base font-semibold">Turn export controls into a software play</h4>
         <p>On the hardware side, the United States is trying to slow China down by restricting the export of advanced AI chips like Nvidia’s A100 and H100, and later even the cut down A800 and H800 variants. Policy notes and reporting describe how Nvidia had to design the H20, L20 and L2 chips specifically for the Chinese market under these constraints, including a <a class="underline text-blue-600" href="https://www.congress.gov/crs-product/R48642" target="_blank" rel="noopener">Congressional Research Service brief</a> and analysis from <a class="underline text-blue-600" href="https://ecipe.org/blog/nvidia-in-chinese-market/" target="_blank" rel="noopener">ECIPE</a>.</p>
 
         <p>In that context, open models are a kind of judo move. Even if China cannot always buy the very best chips, it can:</p>
@@ -99,25 +99,12 @@
           <li>Let everyone run them on any hardware they want</li>
         </ul>
 
-        <p>Analysts and open source leaders have pointed out that once weights are open, companies everywhere can use them locally without sending data to a specific country or cloud. <a class="underline text-blue-600" href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a>.</p>
-
         <p>In my opinion, this turns some of the hardware pressure into a software and standards game, where China has more room to maneuver.</p>
-
-        <h3 class="text-lg font-semibold">Control at home, openness abroad</h3>
-        <p>At the same time, China has some of the strictest rules for generative AI services. Generative AI providers must register, pass security assessments and keep outputs aligned with government guidelines. This is clear in documents like the <a class="underline text-blue-600" href="https://cset.georgetown.edu/publication/china-safety-requirements-for-generative-ai-final/" target="_blank" rel="noopener">Basic Safety Requirements for Generative Artificial Intelligence Services</a> and overviews of China’s generative AI measures from <a class="underline text-blue-600" href="https://www.chinalawtranslate.com/en/overview-of-draft-measures-on-generative-ai/" target="_blank" rel="noopener">China Law Translate</a> and <a class="underline text-blue-600" href="https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-china" target="_blank" rel="noopener">White &amp; Case</a>.</p>
-
-        <p>So I see a split:</p>
-        <ul class="list-disc ml-6 space-y-2">
-          <li>The base models can be open weight and global</li>
-          <li>The domestic services are controlled by regulation, safety tuning and monitoring</li>
-        </ul>
-
-        <p>China does not lose control at home by open sourcing. It gains influence abroad.</p>
 
         <h2 class="text-xl font-semibold">What this means for developers and poor countries</h2>
         <p>From a developer point of view, I think the impact is huge.</p>
 
-        <p>If you are in Europe, Africa, Latin America or Southeast Asia and you cannot afford to pay for expensive US APIs, Chinese open models are very attractive. You can:</p>
+        <p>If you live in a poor country and you cannot afford to pay for expensive US APIs, Chinese open models are very attractive. You can:</p>
         <ul class="list-disc ml-6 space-y-2">
           <li>Download them once</li>
           <li>Run them on your own GPUs or on a cheaper local cloud</li>
@@ -128,38 +115,27 @@
 
         <p>In my opinion, this is soft power. If most universities, startups and governments in the Global South standardize on Chinese open models, China gets long term influence over tools, formats and even research directions.</p>
 
-        <h2 class="text-xl font-semibold">The chip supply chain and Taiwan’s role</h2>
-        <p>All of this still depends on one very physical thing. Chips.</p>
+        <h2 class="text-xl font-semibold">Taiwan, the chip supply chain, and the West</h2>
+        <h3 class="text-base font-semibold">Hardware reality</h3>
+        <p>AI still runs on hardware. Most advanced GPUs are fabbed by TSMC, which builds Nvidia’s latest parts; some capacity is expanding to the US, but Taiwan remains the hub.</p>
 
-        <p>Today, advanced AI chips come mainly from Taiwan Semiconductor Manufacturing Company, TSMC. TSMC manufactures Nvidia’s GPUs and dominates the most advanced process nodes that AI models need. In recent public statements and reports, Nvidia and TSMC highlight how Blackwell class GPUs are produced in TSMC fabs, including new facilities in Arizona. Nvidia’s CEO Jensen Huang literally said that without TSMC there is no Nvidia today. You can see this in <a class="underline text-blue-600" href="https://blogs.nvidia.com/blog/tsmc-blackwell-manufacturing/" target="_blank" rel="noopener">Nvidia’s manufacturing update</a>, coverage from <a class="underline text-blue-600" href="https://www.pcgamer.com/hardware/at-a-company-sports-day-nvidia-ceo-jensen-huang-acknowledges-without-tsmc-there-is-no-nvidia-today-and-says-thank-you-to-the-pride-of-the-world-company/" target="_blank" rel="noopener">PC Gamer</a>, and reporting by <a class="underline text-blue-600" href="https://www.reuters.com/technology/nvidia-tsmc-unveil-first-blackwell-chip-wafer-made-us-axios-reports-2025-10-17/" target="_blank" rel="noopener">Reuters</a>.</p>
+        <p>Open weights don’t remove this constraint: training and large‑scale deployment depend on a few fabs—and on ship routes and export rules.</p>
 
-        <p>At the same time, TSMC is investing in the United States and Europe, supported by large public subsidies and national security arguments around AI chip independence. Articles on US and EU onshoring show how critical this is for the AI supply chain.</p>
-
-        <p>So when I think about Chinese open models, I also think about this. Even if the model weights are open, the training and large scale deployment still rely on chips that come from a very small set of fabs, with Taiwan at the center and the US trying to pull more of that capacity onshore.</p>
-
-        <p>This is why the AI story is never just software. It is also ship routes, fabs and export rules.</p>
-
-        <h2 class="text-xl font-semibold">What it means for the West</h2>
-        <p>For the United States and its allies, I think there are two main consequences.</p>
-
-        <p>First, open Chinese models make export controls harder to manage in practice. Even if you limit the best chips, capable models can leak everywhere once released, which several policy analyses now describe as a proliferation risk for advanced AI capabilities.</p>
-
-        <p>Second, Western companies cannot assume that closed beats open forever. If free models from China are good enough for many tasks, US and European vendors will feel pressure to match that mix of quality, cost and openness.</p>
-
-        <p>In my opinion, the only real answer is to compete on open source too, with strong local models, clear safety work and trusted governance.</p>
+        <h3 class="text-base font-semibold">Implications for the West</h3>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>Export controls: harder to enforce once capable open models spread.</li>
+          <li>Competition: pressure to match “good‑enough” open models on quality, cost and openness.</li>
+          <li>Response: compete in the open—invest in local models, safety, trusted governance—and keep building onshore capacity.</li>
+        </ul>
 
         <h2 class="text-xl font-semibold">Europe and especially France</h2>
-        <p>Europe is in an interesting middle position. It is not leading on chips, but it is trying to lead on regulation and on open source.</p>
+        <p>Europe leans on regulation and open source more than on chips. The EU AI Act sets strict rules, and many argue open source is central to AI sovereignty.</p>
 
-        <p>The EU AI Act sets strict rules on high risk AI and general purpose models. At the same time, groups like the Linux Foundation Europe, Open Future and others argue that open source is key for AI sovereignty in Europe. Useful explainers include the <a class="underline text-blue-600" href="https://linuxfoundation.eu/newsroom/ai-act-explainer" target="_blank" rel="noopener">Linux Foundation Europe AI Act explainer</a>, analysis from <a class="underline text-blue-600" href="https://openfuture.eu/observatory/aia-open-source/" target="_blank" rel="noopener">Open Future</a>, a <a class="underline text-blue-600" href="https://datainnovation.org/2024/03/the-eus-ai-act-creates-regulatory-complexity-for-open-source-ai/" target="_blank" rel="noopener">Center for Data Innovation brief</a>, and the <a class="underline text-blue-600" href="https://wikimedia.brussels/open-letter-harnessing-open-source-ai-to-advance-digital-sovereignty/" target="_blank" rel="noopener">Wikimedia Brussels open letter</a>.</p>
-
-        <p>France is a good example of this strategy. Companies like Mistral AI develop high performance open and commercial models and present them as a way for European firms to build on local technology, with European values and law in mind. See <a class="underline text-blue-600" href="https://mistral.ai/" target="_blank" rel="noopener">Mistral’s official site</a>, <a class="underline text-blue-600" href="https://www.fintechweekly.com/magazine/articles/mistral-ai-2b-funding-european-ai-independence" target="_blank" rel="noopener">funding coverage</a>, and <a class="underline text-blue-600" href="https://cloudsummit.eu/blog/mistral-ai-14-billion-valuation-europe-turning-point" target="_blank" rel="noopener">analysis of its valuation</a>.</p>
-
-        <p>I think this is Europe’s play. Use open source to stay in the game, even if the chips and the largest models still come mainly from the US and Asia.</p>
+        <p>France is the concrete example: Mistral AI positions high‑performance open and commercial models as a European foundation. Europe’s play is to use open ecosystems to stay in the game, even if the cutting‑edge chips and largest models still come mainly from the US and Asia.</p>
 
         <p>In my opinion, China is not open sourcing its AI models out of generosity. It is a smart move in a larger game that mixes developers, poor countries, export controls and the chip supply chain.</p>
 
-        <p>For the rest of us, this means one thing. If we care about sovereignty and long term leverage, we cannot ignore open source. We either build our own open ecosystems, or we will end up living inside someone else’s.</p>
+        <p>If countries care about sovereignty and long term leverage, they cannot ignore open source. They either build their own open ecosystems, or they will end up living inside someone else’s.</p>
       </section>
     </article>
   </main>
