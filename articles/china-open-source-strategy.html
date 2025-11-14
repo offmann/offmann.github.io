@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>China’s Open Source Wave – Jottings</title>
+  <meta name="description" content="China uses open weight AI models to lock in developers, navigate export controls, and balance domestic oversight with global influence." />
+  <meta name="keywords" content="China open source AI, Qwen, DeepSeek, AI strategy, export controls, AI geopolitics, Othman Bouzahzah" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://offmann.github.io/articles/china-open-source-strategy.html" />
+  <meta property="og:title" content="China’s Open Source Wave" />
+  <meta property="og:description" content="Chinese companies open source powerful AI models to shape ecosystems, counter hardware limits, and expand global influence." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://offmann.github.io/articles/china-open-source-strategy.html" />
+  <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="China’s Open Source Wave" />
+  <meta name="twitter:description" content="Chinese companies open source powerful AI models to shape ecosystems, counter hardware limits, and expand global influence." />
+  <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S1X0SRBPXN', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    });
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "China’s Open Source Wave",
+    "description": "China uses open weight AI models to lock in developers, navigate export controls, and balance domestic oversight with global influence.",
+    "author": {"@type": "Person", "name": "Othman Bouzahzah"},
+    "datePublished": "2025-11-14",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://offmann.github.io/articles/china-open-source-strategy.html"},
+    "image": "https://offmann.github.io/preview.png"
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="./index.html" class="text-sm underline">← Back</a>
+      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">China’s Open Source Wave</h1>
+        <div class="flex items-center space-x-3">
+          <p class="text-sm text-gray-600">Jottings • Nov 14, 2025</p>
+          <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
+        </div>
+      </header>
+
+      <section class="space-y-6 leading-relaxed">
+        <p>Chinese companies are now leaders in open weight models.</p>
+
+        <p>Alibaba’s Qwen family covers many sizes and use cases and is marketed as a one stop solution for developers and enterprises, with full open source style access to weights and tooling. You can see this directly in <a class="underline text-blue-600" href="https://github.com/QwenLM/Qwen" target="_blank" rel="noopener">their GitHub repository</a>, the <a class="underline text-blue-600" href="https://qwenlm.github.io/blog/qwen2.5-max/" target="_blank" rel="noopener">Qwen 2.5 Max announcement</a>, and an <a class="underline text-blue-600" href="https://datasciencedojo.com/blog/the-evolution-of-qwen-models/" target="_blank" rel="noopener">overview of the Qwen model evolution</a>.</p>
+
+        <p>DeepSeek releases competitive models with weights that anyone can download, fine tune and run locally on Hugging Face. Recent versions like DeepSeek V3 and DeepSeek R1 aim at high level reasoning and are openly downloadable as weights, including <a class="underline text-blue-600" href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank" rel="noopener">DeepSeek V3</a>, <a class="underline text-blue-600" href="https://huggingface.co/deepseek-ai/DeepSeek-R1" target="_blank" rel="noopener">DeepSeek R1</a>, and the <a class="underline text-blue-600" href="https://huggingface.co/blog/open-r1" target="_blank" rel="noopener">Open R1 launch recap</a>.</p>
+
+        <p>In other words, if I am a developer today and I want a strong free base model, it is very likely I will reach for a Chinese model.</p>
+
+        <h2 class="text-xl font-semibold">Why I think China is doing this</h2>
+        <h2 class="text-base font-semibold">Lock in developers and ecosystems</h2>
+        <p>In my view, the first reason is simple. If millions of developers build on your models, you quietly set the standard.</p>
+
+        <p>Open weights make it easy to:</p>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>Embed Qwen or DeepSeek inside products</li>
+          <li>Reuse their tokenizers, tools and formats</li>
+          <li>Host them on friendly cloud and hardware stacks</li>
+        </ul>
+
+        <p>Alibaba explicitly positions Qwen as an open platform for developers on top of Alibaba Cloud and documents all the variants and use cases on its official resources, including <a class="underline text-blue-600" href="https://github.com/QwenLM/Qwen" target="_blank" rel="noopener">technical documentation</a> and the <a class="underline text-blue-600" href="https://qwenlm.github.io/blog/qwen2.5-max/" target="_blank" rel="noopener">Qwen 2.5 Max blog post</a>.</p>
+
+        <p>So I think the game is this. Give away the model. Make money on cloud, chips and enterprise projects around it.</p>
+
+        <h4 class="text-base font-semibold">Turn export controls into a software play</h4>
+        <p>On the hardware side, the United States is trying to slow China down by restricting the export of advanced AI chips like Nvidia’s A100 and H100, and later even the cut down A800 and H800 variants. Policy notes and reporting describe how Nvidia had to design the H20, L20 and L2 chips specifically for the Chinese market under these constraints, including a <a class="underline text-blue-600" href="https://www.congress.gov/crs-product/R48642" target="_blank" rel="noopener">Congressional Research Service brief</a> and analysis from <a class="underline text-blue-600" href="https://ecipe.org/blog/nvidia-in-chinese-market/" target="_blank" rel="noopener">ECIPE</a>.</p>
+
+        <p>In that context, open models are a kind of judo move. Even if China cannot always buy the very best chips, it can:</p>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>Train strong models on what it has</li>
+          <li>Release the weights to the world</li>
+          <li>Let everyone run them on any hardware they want</li>
+        </ul>
+
+        <p>In my opinion, this turns some of the hardware pressure into a software and standards game, where China has more room to maneuver.</p>
+
+        <h2 class="text-xl font-semibold">What this means for developers and poor countries</h2>
+        <p>From a developer point of view, I think the impact is huge.</p>
+
+        <p>If you live in a poor country and you cannot afford to pay for expensive US APIs, Chinese open models are very attractive. You can:</p>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>Download them once</li>
+          <li>Run them on your own GPUs or on a cheaper local cloud</li>
+          <li>Fine tune them on your language and use case</li>
+        </ul>
+
+        <p>Recent coverage and community projects around DeepSeek and Qwen show how they are becoming viable drop in replacements for many closed models, especially when cost matters more than squeezing out the last few benchmark points. Highlights include <a class="underline text-blue-600" href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank" rel="noopener">DeepSeek V3</a>, the <a class="underline text-blue-600" href="https://huggingface.co/blog/open-r1" target="_blank" rel="noopener">Open R1 announcement</a>, and <a class="underline text-blue-600" href="https://github.com/QwenLM/Qwen" target="_blank" rel="noopener">Qwen’s open resources</a>.</p>
+
+        <p>In my opinion, this is soft power. If most universities, startups and governments in the Global South standardize on Chinese open models, China gets long term influence over tools, formats and even research directions.</p>
+
+        <h2 class="text-xl font-semibold">Taiwan, the chip supply chain, and the West</h2>
+        <h3 class="text-base font-semibold">Hardware reality</h3>
+        <p>AI still runs on hardware. Most advanced GPUs are fabbed by TSMC, which builds Nvidia’s latest parts; some capacity is expanding to the US, but Taiwan remains the hub.</p>
+
+        <p>Open weights don’t remove this constraint: training and large‑scale deployment depend on a few fabs—and on ship routes and export rules.</p>
+
+        <h3 class="text-base font-semibold">Implications for the West</h3>
+        <ul class="list-disc ml-6 space-y-2">
+          <li>Export controls: harder to enforce once capable open models spread.</li>
+          <li>Competition: pressure to match “good‑enough” open models on quality, cost and openness.</li>
+          <li>Response: compete in the open—invest in local models, safety, trusted governance—and keep building onshore capacity.</li>
+        </ul>
+
+        <h2 class="text-xl font-semibold">Europe and especially France</h2>
+        <p>Europe leans on regulation and open source more than on chips. The EU AI Act sets strict rules, and many argue open source is central to AI sovereignty.</p>
+
+        <p>France is the concrete example: Mistral AI positions high‑performance open and commercial models as a European foundation. Europe’s play is to use open ecosystems to stay in the game, even if the cutting‑edge chips and largest models still come mainly from the US and Asia.</p>
+
+        <p>In my opinion, China is not open sourcing its AI models out of generosity. It is a smart move in a larger game that mixes developers, poor countries, export controls and the chip supply chain.</p>
+
+        <p>If countries care about sovereignty and long term leverage, they cannot ignore open source. They either build their own open ecosystems, or they will end up living inside someone else’s.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-600 border-t border-gray-200">
+    <p>&copy; <span id="year"></span> Othman Bouzahzah</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
