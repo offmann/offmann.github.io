@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An AI Platform for a Mid-Size Company: Pull, Not Push - Jottings</title>
+  <meta name="description" content="A practical view of AI platform strategy: start from bottlenecks, invest in compounding primitives, and keep adoption pull-based." />
+  <meta name="keywords" content="AI platform, AI strategy, LLM engineering, context engineering, LLM ops, evaluation, governance, platform engineering, Othman Bouzahzah" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://offmann.github.io/articles/ai-platform.html" />
+  <meta property="og:title" content="An AI Platform for a Mid-Size Company: Pull, Not Push" />
+  <meta property="og:description" content="Treat AI platform as an operating model: bottlenecks first, pull adoption, and compounding primitives over mandates." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://offmann.github.io/articles/ai-platform.html" />
+  <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="article:published_time" content="2026-02-06" />
+  <meta property="article:modified_time" content="2026-02-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="An AI Platform for a Mid-Size Company: Pull, Not Push" />
+  <meta name="twitter:description" content="Treat AI platform as an operating model: bottlenecks first, pull adoption, and compounding primitives over mandates." />
+  <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S1X0SRBPXN', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    });
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "An AI Platform for a Mid-Size Company: Pull, Not Push",
+    "description": "An opinionated, practical view of AI platform strategy for engineering leaders and builders.",
+    "author": {"@type": "Person", "name": "Othman Bouzahzah"},
+    "datePublished": "2026-02-06",
+    "dateModified": "2026-02-06",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://offmann.github.io/articles/ai-platform.html"},
+    "image": "https://offmann.github.io/preview.png"
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="./index.html" class="text-sm underline">&larr; Back</a>
+      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">An AI Platform for a Mid-Size Company: Pull, Not Push</h1>
+        <div class="flex items-center space-x-3">
+          <p class="text-sm text-gray-600">Jottings - <time datetime="2026-02-06">Feb 6, 2026</time></p>
+          <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
+        </div>
+      </header>
+
+      <div class="mb-8 p-4 rounded-2xl border border-gray-200 bg-gray-50" data-article-audio="true">
+        <p class="text-sm text-gray-700 mb-2">Listen to summary</p>
+        <audio controls preload="none" class="w-full">
+          <source src="../audio/ai-platform.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p class="text-xs text-gray-500 mt-2"><a class="underline" href="../audio/ai-platform.mp3">Download audio</a></p>
+      </div>
+
+      <section class="space-y-6 leading-relaxed">
+        <div class="space-y-3">
+          <p>AI work is changing fast. Take the details here with a grain of salt. Implementation is getting cheaper, so bottlenecks move. I am trying to focus on principles and reusable primitives more than on any specific tool.</p>
+          <p>When I say “AI platform” I do not mean a unified UI where you do everything. I mean an operating model plus paved roads: shared components, stable interfaces, and guardrails that let teams ship quickly with flexibility.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">TLDR</h2>
+          <p>I think an AI platform is not a tool you buy or a framework you mandate. In my opinion it is how you help teams ship AI powered product features faster, safer, and cheaper.</p>
+          <p>Start from bottlenecks, not tools:</p>
+          <ul class="list-disc ml-5 space-y-2">
+            <li><strong>Alignment</strong>: what to build, why now, what good means</li>
+            <li><strong>Context</strong>: governed, correct, fresh data the model can safely use</li>
+            <li><strong>Evaluation</strong>: how you move from demo to measurable quality</li>
+            <li><strong>Operations</strong>: tracing, debugging, incident response, cost control, governance</li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Scope: AI in the product</h2>
+          <p>People use “AI platform” for two different things. One is building AI powered software where the model is part of the product. The other is using AI for coding. This article is about the first one.</p>
+          <div class="border border-gray-200 rounded-2xl bg-gray-50 p-5 space-y-2">
+            <h3 class="text-lg font-semibold">Aside: using AI for coding</h3>
+            <p>I think agentic coding is real and it changes delivery speed. But most teams do not build a platform for it. They adopt tools like Cursor, Codex, or Claude Code, then rely on normal engineering controls like reviews, tests, and security scanning.</p>
+            <p>That is a separate topic with its own details. I only mention it because it is one more reason mandates age badly.</p>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Pull, not push</h2>
+          <p>I think most AI platform efforts fail because they start with a tool and then push it on teams. In my opinion the better posture is to stay tool agnostic and pull based. Teams should adopt because the paved road is the easiest safe path.</p>
+          <p>That usually means: fast onboarding, safe defaults, clear runbooks, templates, and real support. If the platform creates friction, teams will route around it.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Start from bottlenecks</h2>
+          <p>I like to map the real workflow: idea, experiment, MVP, production candidate, production. In mid to big companies, the model API call is rarely the hard part. The MVP to production cliff is.</p>
+
+          <h3 class="text-lg font-semibold">1) Alignment</h3>
+          <p>Alignment is agreeing on the user problem, success metrics, risk, and what “done” means. Without this, teams optimize demos and argue late. A platform can help with decision templates, quality checklists, and a clear approval path for higher risk use cases.</p>
+
+          <h3 class="text-lg font-semibold">2) Context</h3>
+          <p>I think context engineering matters more than prompt engineering. Quality often comes from governed inputs: entity data, documents, features, timestamps, lineage, and permissions. If context is wrong you get bad outputs. If context leaks you get incidents.</p>
+
+          <h3 class="text-lg font-semibold">3) Evaluation</h3>
+          <p>It is easy to demo an MVP. It is hard to ship a reliable feature. In my opinion teams need a way to answer: is this version better, where does it fail, and what is the risk of shipping it?</p>
+
+          <h3 class="text-lg font-semibold">4) Operations</h3>
+          <p>LLM Ops is still Ops. You need tracing, monitoring, and incident response. The difference is that AI failures can look healthy at the infrastructure level. A 200 response can still be wrong, unsafe, or too expensive.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Compounding primitives</h2>
+          <p>I think a good platform invests in primitives that many teams can reuse, while keeping tool choice flexible:</p>
+          <ul class="list-disc ml-5 space-y-2">
+            <li><strong>Context contracts</strong>: stable APIs and data packages that are safe by default</li>
+            <li><strong>Evaluation building blocks</strong>: datasets, regression runs, and release gates</li>
+            <li><strong>Tracing and auditability</strong>: enough visibility to debug and explain behavior</li>
+            <li><strong>Model access control</strong>: routing, budgets, rate limits, and permissions</li>
+          </ul>
+          <p>In my opinion the interface and the discipline are the product. The internal implementation can change.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Context is the moat</h2>
+          <p>In my opinion models are becoming easier to access, so they are rarely the durable advantage. What compounds is domain context, integration into real workflows, evaluation discipline, and operating discipline.</p>
+
+          <h3 class="text-lg font-semibold">Example: context packages in an affiliate network</h3>
+          <p>In an affiliate network like Awin, a “publisher snapshot” context package can bundle facts, performance features, relevant documents, freshness, and permissions. Many AI features can reuse that same governed input, even if the prompts and evaluations are feature specific.</p>
+
+          <h3 class="text-lg font-semibold">Optional: an embedding factory</h3>
+          <p>If overlap is real, a shared embedding and vectorization factory can be high ROI. I would not build it unless multiple teams reuse it. Production needs versioning, refresh SLAs, access control, and traceability.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Evaluation and release discipline</h2>
+          <p>I think vibe testing is the default failure mode. The minimum system is simple:</p>
+          <ul class="list-disc ml-5 space-y-2">
+            <li><strong>Define quality explicitly</strong>: correct, unacceptable, and “good enough”</li>
+            <li><strong>Use real examples early</strong>: synthetic data can help you start, but it misses real edge cases</li>
+            <li><strong>Run regressions</strong>: prompt changes, retrieval changes, tool changes, model upgrades</li>
+            <li><strong>Human review where needed</strong>: subjective outputs need humans in the loop</li>
+            <li><strong>Release gates and rollbacks</strong>: block releases below thresholds and roll back quickly</li>
+          </ul>
+          <p>In my opinion a platform wins when this is easy and normal.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">What to standardize, and what not to standardize</h2>
+          <p>I think you should standardize the parts that repeat and reduce risk:</p>
+          <ul class="list-disc ml-5 space-y-2">
+            <li>context access and permissions</li>
+            <li>evaluation building blocks and release gates</li>
+            <li>tracing, audit, and incident response basics</li>
+            <li>governance boundaries and cost controls</li>
+          </ul>
+          <p>I do not think you should standardize one model, one vendor, or one agent framework. Those choices change too fast.</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Common failure modes</h2>
+          <ul class="list-disc ml-5 space-y-2">
+            <li><strong>Starting with a tool</strong> instead of a bottleneck</li>
+            <li><strong>Building too much</strong> before proving reuse</li>
+            <li><strong>Forcing adoption</strong> and creating quiet workarounds</li>
+            <li><strong>Shipping MVPs without evaluation</strong> and calling it done</li>
+            <li><strong>Ignoring cost</strong> until it spikes</li>
+            <li><strong>Adding capabilities before guardrails</strong> and auditability</li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl font-semibold">Closing opinion</h2>
+          <p>I think a good AI platform is boring in the best way. It is focused on discipline and compounding reuse. It lets teams move fast without breaking trust.</p>
+          <p>If you remember one thing, make it this: start from bottlenecks, invest in compounding primitives, and keep the platform pull based.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-600 border-t border-gray-200">
+    <p>&copy; <span id="year"></span> Othman Bouzahzah</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
