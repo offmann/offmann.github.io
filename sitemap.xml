@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://offmann.github.io/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/ai-platform.html</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/ai-failure-modes-four-lenses.html</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/china-open-source-strategy.html</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/non-tech-ai-next-two-years.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/probabilistic-software.html</loc>
-    <lastmod>2025-11-04</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/ai-changes-work.html</loc>
-    <lastmod>2025-10-24</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/economics-of-intelligence.html</loc>
-    <lastmod>2025-10-22</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/intelligece-as-commodity.html</loc>
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://offmann.github.io/articles/llm-dataset-creation.html</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
