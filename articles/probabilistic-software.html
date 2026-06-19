@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building LLM Software Lives Between Two Worlds – Jottings</title>
-  <meta name="description" content="Classic software is deterministic; LLM apps add a probabilistic core. If you’re a data scientist or a software engineer, you need skills from the other side to ship reliable products." />
+  <title>Building LLM software lives between two worlds - Field notes</title>
+  <meta name="description" content="Reliable LLM products combine deterministic software with probabilistic models, evaluation, retrieval, observability, and careful system design." />
   <meta name="keywords" content="LLM software, probabilistic software, structured outputs, retrieval, evaluations, RAG, agents, observability, Othman Bouzahzah" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://offmann.github.io/articles/probabilistic-software.html" />
-  <meta property="og:title" content="Building LLM Software Lives Between Two Worlds" />
+  <meta property="og:title" content="Building LLM software lives between two worlds" />
   <meta property="og:description" content="Classic software is deterministic; LLM apps add a probabilistic core. Learn habits that make probabilistic systems reliable." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://offmann.github.io/articles/probabilistic-software.html" />
   <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Building LLM Software Lives Between Two Worlds" />
+  <meta name="twitter:title" content="Building LLM software lives between two worlds" />
   <meta name="twitter:description" content="Classic software is deterministic; LLM apps add a probabilistic core." />
   <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
   <script>
@@ -38,7 +42,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Building LLM Software Lives Between Two Worlds",
+    "headline": "Building LLM software lives between two worlds",
     "description": "Classic software is deterministic; LLM apps add a probabilistic core.",
     "author": {"@type": "Person", "name": "Othman Bouzahzah"},
     "datePublished": "2025-11-04",
@@ -47,22 +51,23 @@
   }
   </script>
   
+  <link rel="stylesheet" href="../site.css" />
 </head>
 <body class="bg-white text-gray-900">
   <!-- Minimal header -->
   <header class="border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="./index.html" class="text-sm underline">← Back</a>
-      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+      <a href="./index.html" class="text-sm underline">Back to notes</a>
+      <a href="./index.html" class="text-sm hover:underline">Field notes</a>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-4 py-10">
     <article>
       <header class="mb-8">
-        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">Building LLM Software Lives Between Two Worlds</h1>
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">Building LLM software lives between two worlds</h1>
         <div class="flex items-center space-x-3">
-          <p class="text-sm text-gray-600">Jottings • Nov 4, 2025</p>
+          <p class="text-sm text-gray-600">Field notes • Nov 4, 2025</p>
           <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-blue-100 text-blue-700 border-blue-200">LLM engineering</span>
         </div>
       </header>
@@ -88,14 +93,14 @@
         <ul class="list-disc ml-5 space-y-2">
           <li><strong>Database:</strong> source of truth. Facts, policies, user state, and logs live outside the model.</li>
           <li><strong>LLM:</strong> orchestrator and sometimes worker. It plans, routes, and synthesizes. It calls tools and fetches data, then drafts an answer.</li>
-          <li><strong>Context window:</strong> working memory. Put only what is needed for this step. Do not treat it as a hard drive.</li>
+          <li><strong>Context window:</strong> working memory. Put only what is needed for this step and keep durable state elsewhere.</li>
           <li><strong>External memory:</strong> long-term recall. Use retrieval over curated stores for knowledge and history.</li>
         </ul>
 
-        <p>Design as if you were building around a flaky RPC: add retries, timeouts, idempotency, and guardrails. Keep boundaries sharp. The model is not the system. The system is the model plus the rules around it.</p>
+        <p>Design as if you were building around a flaky RPC: add retries, timeouts, idempotency, and guardrails. Keep boundaries sharp. Reliability comes from the model together with the rules and infrastructure around it.</p>
 
         <h2 class="text-xl font-semibold">What actually moves the needle in LLM apps</h2>
-        <p>Most wins do not come from swapping to a bigger model. They come from making the surrounding system legible and controlled.</p>
+        <p>Most wins come from making the surrounding system legible and controlled. Swapping to a bigger model is usually a later optimisation.</p>
         <ul class="list-disc ml-5 space-y-2">
           <li><strong>Structured outputs.</strong> Ask for JSON that matches a schema, validate it, and retry on failure. This shrinks a big class of downstream errors.</li>
           <li><strong>High-quality retrieval.</strong> Clean your corpus, chunk by meaning, add headings and metadata, deduplicate near-duplicates, and store provenance so answers can cite sources. Add query rewriting and reranking before you consider a model change.</li>
@@ -115,7 +120,7 @@
         </ul>
 
         <h2 class="text-xl font-semibold">Shipping well: evals, retrieval, and structured outputs</h2>
-        <p>Think process, not platform. The goal is agreement between your evaluation and what users consider “good.”</p>
+        <p>Focus on the process. The goal is agreement between your evaluation and what users consider “good.”</p>
         <ol class="list-decimal ml-5 space-y-2">
           <li>
             <p><strong>Build an error taxonomy.</strong> Read real sessions. Label failures in plain language: wrong fact, missing citation, format error, bad tone, unsafe action, wrong tool, stale data. This becomes your checklist.</p>
@@ -135,7 +140,7 @@
             <p><strong>Enforce structured outputs.</strong> Define the schema before you prompt. Validate strictly. On failure, repair or reprompt with the error message. For long outputs, use incremental or partial validation to avoid throwing everything away.</p>
           </li>
           <li>
-            <p><strong>Keep retrieval practical.</strong> Chunk by semantic units, not fixed size alone. Prefer fewer, higher-quality chunks to many tiny ones. Attach titles, sections, dates, and IDs. Rewrite queries to include constraints the user implied but did not state. Rerank with a lightweight model before you send context to the LLM.</p>
+            <p><strong>Keep retrieval practical.</strong> Use semantic units as the primary chunk boundary and fixed size as a secondary constraint. Prefer fewer, higher-quality chunks to many tiny ones. Attach titles, sections, dates, and IDs. Rewrite queries to include constraints the user implied but did not state. Rerank with a lightweight model before you send context to the LLM.</p>
           </li>
         </ol>
 
@@ -143,14 +148,14 @@
         <ul class="list-disc ml-5 space-y-2">
           <li><strong>Narrow the job-to-be-done.</strong> A focused assistant with a strong template usually beats a general agent. Define success in one sentence the team agrees on.</li>
           <li><strong>Design for CAIR: confidence in results.</strong> Show citations, show what was retrieved, and make correction easy. Users forgive minor misses when they can inspect and fix.</li>
-          <li><strong>Own budgets.</strong> Put ceilings on tokens, context size, and tool calls. Track cost per successful task, not cost per call.</li>
+          <li><strong>Own budgets.</strong> Put ceilings on tokens, context size, and tool calls. Track cost per successful task; cost per call misses whether the work succeeded.</li>
           <li><strong>Fail safe, then fail fast.</strong> If a tool call is risky, require confirmation. If retrieval is empty, return a graceful fallback rather than guessing.</li>
-          <li><strong>Make state explicit.</strong> Keep a typed state object across steps: user intent, constraints, retrieved evidence, intermediate outputs, and decisions taken. Do not hide state inside prompts.</li>
+          <li><strong>Make state explicit.</strong> Keep a typed state object across steps: user intent, constraints, retrieved evidence, intermediate outputs, and decisions taken. Keep durable state out of prompts.</li>
           <li><strong>Ship with a kill switch and feature flags.</strong> Roll out by cohort. If a new prompt or retriever hurts a slice, turn it off without a redeploy.</li>
           <li><strong>Continuously prune.</strong> Remove unused tools, stale prompts, and dead branches in the flow. The smaller the surface, the fewer surprises.</li>
         </ul>
 
-        <p>LLM apps are not pure ML and not pure software. They are systems that wrap a probabilistic engine in deterministic scaffolding. Data people need to adopt software discipline around contracts, observability, and rollouts. Software people need to embrace evaluation, retrieval quality, and slice thinking. Meet in the middle. That is where reliable products come from.</p>
+        <p>LLM applications combine a probabilistic engine with deterministic scaffolding. Data people need software discipline around contracts, observability, and rollouts. Software people need evaluation, retrieval quality, and slice-aware thinking. Reliable products emerge where those practices meet.</p>
       </section>
     </article>
   </main>

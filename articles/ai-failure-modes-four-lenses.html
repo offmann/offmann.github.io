@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Failure Modes: Four Lenses – Jottings</title>
-  <meta name="description" content="Most AI failures are not one thing. They come from unclear goals, missing context, wrong model tradeoffs, or messy tool use. A simple four-lens checklist." />
+  <title>AI failure modes: four lenses - Field notes</title>
+  <meta name="description" content="AI failures often come from unclear goals, missing context, wrong model tradeoffs, or messy tool use. A simple four-lens checklist." />
   <meta name="keywords" content="AI failure modes, LLM reliability, RAG failures, retrieval, grounding, agent tool use, model choice, evaluations, Othman Bouzahzah" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://offmann.github.io/articles/ai-failure-modes-four-lenses.html" />
-  <meta property="og:title" content="AI Failure Modes: Four Lenses" />
+  <meta property="og:title" content="AI failure modes: four lenses" />
   <meta property="og:description" content="A simple four-lens checklist for where AI projects fail: the problem, the context, the model, and the tools." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://offmann.github.io/articles/ai-failure-modes-four-lenses.html" />
   <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Failure Modes: Four Lenses" />
+  <meta name="twitter:title" content="AI failure modes: four lenses" />
   <meta name="twitter:description" content="A simple checklist for where AI projects fail: the problem, the context, the model, and the tools." />
   <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
   <script>
@@ -38,29 +42,30 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "AI Failure Modes: Four Lenses",
-    "description": "Most AI failures are not one thing. They come from unclear goals, missing context, wrong model tradeoffs, or messy tool use. A simple four-lens checklist.",
+    "headline": "AI failure modes: four lenses",
+    "description": "AI failures often come from unclear goals, missing context, wrong model tradeoffs, or messy tool use. A simple four-lens checklist.",
     "author": {"@type": "Person", "name": "Othman Bouzahzah"},
     "datePublished": "2026-01-06",
     "mainEntityOfPage": {"@type": "WebPage", "@id": "https://offmann.github.io/articles/ai-failure-modes-four-lenses.html"},
     "image": "https://offmann.github.io/preview.png"
   }
   </script>
+  <link rel="stylesheet" href="../site.css" />
 </head>
 <body class="bg-white text-gray-900">
   <header class="border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="./index.html" class="text-sm underline">← Back</a>
-      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+      <a href="./index.html" class="text-sm underline">Back to notes</a>
+      <a href="./index.html" class="text-sm hover:underline">Field notes</a>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-4 py-10">
     <article>
       <header class="mb-8">
-        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">AI Failure Modes: Four Lenses</h1>
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">AI failure modes: four lenses</h1>
         <div class="flex items-center space-x-3">
-          <p class="text-sm text-gray-600">Jottings • Jan 6, 2026</p>
+          <p class="text-sm text-gray-600">Field notes • Jan 6, 2026</p>
           <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-blue-100 text-blue-700 border-blue-200">LLM engineering</span>
         </div>
       </header>
@@ -99,13 +104,13 @@
         <p>If your application is time-sensitive, “recent” is a feature. Add time-aware ranking or filters so stale docs do not win.</p>
 
         <h2 class="text-xl font-semibold">Lens 3 — LLM / token factory: wrong model, wrong tradeoffs</h2>
-        <p>Model choice matters, but it is not the first lever. My default sequence:</p>
+        <p>Model choice matters after the problem and context are clear. My default sequence:</p>
         <ol class="list-decimal ml-5 space-y-2">
           <li><strong>Start strong.</strong> Use a frontier model to learn if the idea and context are viable.</li>
           <li><strong>Fix the system.</strong> Tighten prompts, add validation, improve retrieval, improve UX.</li>
           <li><strong>Then optimize.</strong> Step down to cheaper models until you hit the cost/latency/capability balance you can live with.</li>
         </ol>
-        <p>Fine-tuning is sometimes useful, but many business apps do not need it. If your failures are about missing facts, tools, or unclear outcomes, fine-tuning won’t save you.</p>
+        <p>Fine-tuning is useful for some narrow problems. Failures caused by missing facts, weak tools, or unclear outcomes require fixes elsewhere in the system.</p>
 
         <h2 class="text-xl font-semibold">Lens 4 — Agentic tool use: overcomplicated, under-specified</h2>
         <p>Agents fail when the tooling layer is messy: too many tools, overlapping responsibilities, unclear parameters, and no safety constraints.</p>
@@ -117,7 +122,7 @@
           <li><strong>Guardrails.</strong> Validate arguments, retry with bounded changes, and fail safely (“I don’t know” / “I need clarification”).</li>
         </ul>
 
-        <p>Closing thought: when something breaks, resist the reflex to swap models first. Step back and ask which lens is failing: the job-to-be-done, the context, the model tradeoffs, or the tools. Most of the time, the fix is clearer outcomes, better evidence, tighter contracts, and safer defaults — not more tokens.</p>
+        <p>Closing thought: when something breaks, resist the reflex to swap models first. Step back and ask which lens is failing: the job-to-be-done, the context, the model tradeoffs, or the tools. Clearer outcomes, better evidence, tighter contracts, and safer defaults usually provide the fix.</p>
       </section>
     </article>
   </main>
@@ -131,4 +136,3 @@
   </script>
 </body>
 </html>
-

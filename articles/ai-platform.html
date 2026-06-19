@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>An AI Platform for a Mid-Size Company: Pull, Not Push - Jottings</title>
-  <meta name="description" content="A practical view of AI platform strategy: start from bottlenecks, invest in compounding primitives, and keep adoption pull-based." />
-  <meta name="keywords" content="AI platform, AI strategy, LLM engineering, context engineering, LLM ops, evaluation, governance, platform engineering, Othman Bouzahzah" />
+  <title>How to build an AI platform in a mid-sized or large company</title>
+  <meta name="description" content="How mid-sized and large companies can build AI platforms around delivery, governed context, evaluation, operations, and reusable capabilities." />
+  <meta name="keywords" content="AI platform operating model, AI strategy, AI delivery, context engineering, AI evaluation, AI operations, governance, platform engineering, Othman Bouzahzah" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://offmann.github.io/articles/ai-platform.html" />
-  <meta property="og:title" content="An AI Platform for a Mid-Size Company: Pull, Not Push" />
-  <meta property="og:description" content="Treat AI platform as an operating model: bottlenecks first, pull adoption, and compounding primitives over mandates." />
+  <meta property="og:title" content="How to build an AI platform in a mid-sized or large company" />
+  <meta property="og:description" content="A practical guide to treating an AI platform as an operating model built around delivery bottlenecks, governed context, evaluation, operations, and reusable primitives." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://offmann.github.io/articles/ai-platform.html" />
   <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <meta property="article:published_time" content="2026-02-06" />
-  <meta property="article:modified_time" content="2026-02-06" />
+  <meta property="article:modified_time" content="2026-06-19" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="An AI Platform for a Mid-Size Company: Pull, Not Push" />
-  <meta name="twitter:description" content="Treat AI platform as an operating model: bottlenecks first, pull adoption, and compounding primitives over mandates." />
+  <meta name="twitter:title" content="How to build an AI platform in a mid-sized or large company" />
+  <meta name="twitter:description" content="A practical guide to treating an AI platform as an operating model built around delivery bottlenecks, governed context, evaluation, operations, and reusable primitives." />
   <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
   <script>
@@ -32,7 +36,7 @@
     });
   </script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'IBM Plex Mono', monospace; }
   </style>
@@ -40,31 +44,32 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "An AI Platform for a Mid-Size Company: Pull, Not Push",
-    "description": "An opinionated, practical view of AI platform strategy for engineering leaders and builders.",
+    "headline": "How to build an AI platform in a mid-sized or large company",
+    "description": "A practical guide to treating an AI platform as an operating model built around delivery bottlenecks, governed context, evaluation, operations, and reusable primitives.",
     "author": {"@type": "Person", "name": "Othman Bouzahzah"},
     "datePublished": "2026-02-06",
-    "dateModified": "2026-02-06",
+    "dateModified": "2026-06-19",
     "mainEntityOfPage": {"@type": "WebPage", "@id": "https://offmann.github.io/articles/ai-platform.html"},
     "image": "https://offmann.github.io/preview.png"
   }
   </script>
+  <link rel="stylesheet" href="../site.css" />
 </head>
 <body class="bg-white text-gray-900">
   <header class="border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="./index.html" class="text-sm underline">&larr; Back</a>
-      <a href="./index.html" class="text-sm hover:underline">Jottings</a>
+      <a href="./index.html" class="text-sm underline">Back to notes</a>
+      <a href="./index.html" class="text-sm hover:underline">Field notes</a>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-4 py-10">
     <article>
       <header class="mb-8">
-        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">An AI Platform for a Mid-Size Company: Pull, Not Push</h1>
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">How to build an AI platform in a mid-sized or large company</h1>
         <div class="flex items-center space-x-3">
-          <p class="text-sm text-gray-600">Jottings - <time datetime="2026-02-06">Feb 6, 2026</time></p>
-          <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
+          <p class="text-sm text-gray-600">Practice note • Published <time datetime="2026-02-06">Feb 6, 2026</time> • Updated <time datetime="2026-06-19">Jun 19, 2026</time></p>
+          <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">Practice note</span>
         </div>
       </header>
 
@@ -79,119 +84,97 @@
 
       <section class="space-y-6 leading-relaxed">
         <div class="space-y-3">
-          <p>AI work is changing fast. Take the details here with a grain of salt. Implementation is getting cheaper, so bottlenecks move. I am trying to focus on principles and reusable primitives more than on any specific tool.</p>
-          <p>When I say “AI platform” I do not mean a unified UI where you do everything. I mean an operating model plus paved roads: shared components, stable interfaces, and guardrails that let teams ship quickly with flexibility.</p>
+          <p>When companies say they need an AI platform, the conversation often jumps straight to products: a model gateway, an orchestration framework, a vector database, or a single interface for every team. Tools are concrete, easy to compare, and easy to put on a roadmap.</p>
+          <p>A useful platform starts with the operating model around those tools: how teams choose problems, move experiments into production, access governed context, prove quality, run services, and reuse what others have learned. Technologies will change; these delivery habits are what make the platform durable.</p>
+          <p>This note focuses on AI inside products. AI-assisted software development deserves a separate discussion. The practical question here is one I keep seeing in delivery work: what would make the next valuable AI feature easier and safer to ship than the previous one?</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">TLDR</h2>
-          <p>I think an AI platform is not a tool you buy or a framework you mandate. In my opinion it is how you help teams ship AI powered product features faster, safer, and cheaper.</p>
-          <p>Start from bottlenecks, not tools:</p>
+          <h2 class="text-xl font-semibold">Start with the delivery system</h2>
+          <p>I start by mapping the real path: business problem, experiment, MVP, production candidate, production operation. In a mid-size or larger company, calling a model is rarely the hard part. The cliff appears between a convincing demo and something the business can rely on.</p>
+          <p>That cliff is made of ordinary but stubborn questions. Who owns the outcome? What does good mean? Which data can the feature use? How do we detect regressions? Who responds when the output is wrong but every service is technically healthy? A platform should shorten the answers to those questions.</p>
+          <p>This changes the roadmap. Instead of beginning with a catalogue of capabilities, begin with observed bottlenecks across real teams:</p>
           <ul class="list-disc ml-5 space-y-2">
-            <li><strong>Alignment</strong>: what to build, why now, what good means</li>
-            <li><strong>Context</strong>: governed, correct, fresh data the model can safely use</li>
-            <li><strong>Evaluation</strong>: how you move from demo to measurable quality</li>
-            <li><strong>Operations</strong>: tracing, debugging, incident response, cost control, governance</li>
+            <li><strong>Alignment</strong>: choosing a valuable problem, defining success, and agreeing on risk and ownership</li>
+            <li><strong>Context</strong>: giving models correct, fresh, permission-aware information</li>
+            <li><strong>Evaluation</strong>: turning subjective demos into evidence about quality and failure</li>
+            <li><strong>Operations</strong>: tracing behaviour, controlling cost, handling incidents, and meeting governance obligations</li>
           </ul>
+          <p>The platform team removes recurring friction from this delivery system. Product teams remain accountable for their users, domain decisions, and outcomes.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Scope: AI in the product</h2>
-          <p>People use “AI platform” for two different things. One is building AI powered software where the model is part of the product. The other is using AI for coding. This article is about the first one.</p>
-          <div class="border border-gray-200 rounded-2xl bg-gray-50 p-5 space-y-2">
-            <h3 class="text-lg font-semibold">Aside: using AI for coding</h3>
-            <p>I think agentic coding is real and it changes delivery speed. But most teams do not build a platform for it. They adopt tools like Cursor, Codex, or Claude Code, then rely on normal engineering controls like reviews, tests, and security scanning.</p>
-            <p>That is a separate topic with its own details. I only mention it because it is one more reason mandates age badly.</p>
-          </div>
+          <h2 class="text-xl font-semibold">Cross the MVP-to-production cliff</h2>
+          <p>An MVP can succeed with a good prompt, a handful of examples, and an enthusiastic human nearby. Production cannot depend on those conditions. The feature has to work across messy inputs, changing data, model updates, latency constraints, permission boundaries, and users who behave differently from the test group.</p>
+          <p>The operating model should bring production questions into experimentation from the beginning. A lightweight use-case brief can capture the user problem, expected value, quality threshold, unacceptable outcomes, data sensitivity, and named owner. Higher-risk cases can follow a clearer approval path without forcing every experiment through the same ceremony.</p>
+          <p>This discipline prevents a familiar pattern: many demos, few durable products, and repeated arguments about the same controls. The paved road should carry a team from first test to monitored release, with evidence accumulated along the way.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Pull, not push</h2>
-          <p>I think most AI platform efforts fail because they start with a tool and then push it on teams. In my opinion the better posture is to stay tool agnostic and pull based. Teams should adopt because the paved road is the easiest safe path.</p>
-          <p>That usually means: fast onboarding, safe defaults, clear runbooks, templates, and real support. If the platform creates friction, teams will route around it.</p>
+          <h2 class="text-xl font-semibold">Governed context is shared infrastructure</h2>
+          <p>For many product features, quality depends more on context than on clever prompt wording. Models need domain facts, documents, features, timestamps, lineage, and permissions. If the context is stale or incomplete, the output degrades. If it crosses an access boundary, the feature becomes an incident.</p>
+          <p>The reusable primitive is a context contract: a stable, documented package that teams can access safely. It should say what the data means, how fresh it is, where it came from, and who is allowed to see it. The implementation behind that contract can evolve without making every product team rebuild its integration.</p>
+          <h3 class="text-lg font-semibold">A concrete affiliate-network example</h3>
+          <p>In an affiliate network such as Awin, a “publisher snapshot” could combine verified publisher facts, performance features, relevant documents, freshness metadata, and permissions. A support assistant, an account-management copilot, and a recommendation feature could all reuse that package even though their prompts, user experiences, and evaluations remain specific.</p>
+          <p>Shared embeddings or vectorisation can also be valuable when several teams genuinely need the same source material. I would build that factory only after reuse is visible. Production use brings additional requirements: versioning, refresh expectations, access control, and traceability.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Start from bottlenecks</h2>
-          <p>I like to map the real workflow: idea, experiment, MVP, production candidate, production. In mid to big companies, the model API call is rarely the hard part. The MVP to production cliff is.</p>
-
-          <h3 class="text-lg font-semibold">1) Alignment</h3>
-          <p>Alignment is agreeing on the user problem, success metrics, risk, and what “done” means. Without this, teams optimize demos and argue late. A platform can help with decision templates, quality checklists, and a clear approval path for higher risk use cases.</p>
-
-          <h3 class="text-lg font-semibold">2) Context</h3>
-          <p>I think context engineering matters more than prompt engineering. Quality often comes from governed inputs: entity data, documents, features, timestamps, lineage, and permissions. If context is wrong you get bad outputs. If context leaks you get incidents.</p>
-
-          <h3 class="text-lg font-semibold">3) Evaluation</h3>
-          <p>It is easy to demo an MVP. It is hard to ship a reliable feature. In my opinion teams need a way to answer: is this version better, where does it fail, and what is the risk of shipping it?</p>
-
-          <h3 class="text-lg font-semibold">4) Operations</h3>
-          <p>LLM Ops is still Ops. You need tracing, monitoring, and incident response. The difference is that AI failures can look healthy at the infrastructure level. A 200 response can still be wrong, unsafe, or too expensive.</p>
-        </div>
-
-        <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Compounding primitives</h2>
-          <p>I think a good platform invests in primitives that many teams can reuse, while keeping tool choice flexible:</p>
+          <h2 class="text-xl font-semibold">Evaluation is how quality becomes operable</h2>
+          <p>Vibe testing is useful for discovering an idea and dangerous as a release method. Teams need to answer three simple questions: is this version better, where does it fail, and is the remaining risk acceptable?</p>
+          <p>A practical evaluation system can begin simply: a growing set of representative examples, explicit quality criteria, regression runs for meaningful changes, and human review where judgement is inherently subjective. Synthetic cases can help at the start, while real examples expose the awkward edges that matter in production.</p>
           <ul class="list-disc ml-5 space-y-2">
-            <li><strong>Context contracts</strong>: stable APIs and data packages that are safe by default</li>
-            <li><strong>Evaluation building blocks</strong>: datasets, regression runs, and release gates</li>
-            <li><strong>Tracing and auditability</strong>: enough visibility to debug and explain behavior</li>
-            <li><strong>Model access control</strong>: routing, budgets, rate limits, and permissions</li>
+            <li><strong>Define the boundary</strong>: what is correct, good enough, and unacceptable for this feature</li>
+            <li><strong>Test changes</strong>: prompts, retrieval logic, tools, context versions, and model upgrades can all alter behaviour</li>
+            <li><strong>Gate releases proportionately</strong>: use thresholds, staged rollout, and rollback for the risks that justify them</li>
+            <li><strong>Feed production back in</strong>: incidents, user corrections, and difficult cases should strengthen the evaluation set</li>
           </ul>
-          <p>In my opinion the interface and the discipline are the product. The internal implementation can change.</p>
+          <p>The platform creates leverage by making these practices easy to adopt and results easy to inspect. Product teams still define what quality means in their domain.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Context is the moat</h2>
-          <p>In my opinion models are becoming easier to access, so they are rarely the durable advantage. What compounds is domain context, integration into real workflows, evaluation discipline, and operating discipline.</p>
-
-          <h3 class="text-lg font-semibold">Example: context packages in an affiliate network</h3>
-          <p>In an affiliate network like Awin, a “publisher snapshot” context package can bundle facts, performance features, relevant documents, freshness, and permissions. Many AI features can reuse that same governed input, even if the prompts and evaluations are feature specific.</p>
-
-          <h3 class="text-lg font-semibold">Optional: an embedding factory</h3>
-          <p>If overlap is real, a shared embedding and vectorization factory can be high ROI. I would not build it unless multiple teams reuse it. Production needs versioning, refresh SLAs, access control, and traceability.</p>
+          <h2 class="text-xl font-semibold">AI operations are still operations</h2>
+          <p>AI systems need familiar operational discipline: ownership, observability, incident response, security controls, and cost management. Infrastructure can look healthy while product quality degrades. A request can return 200 quickly and still be misleading, unsafe, or unexpectedly expensive.</p>
+          <p>Useful traces connect model and tool activity to the context version, evaluation evidence, user-visible result, latency, and cost. Auditability should be sufficient to investigate behaviour without logging sensitive data indiscriminately. Budgets, rate limits, and permissions belong close to model access, while runbooks should cover degraded models, unavailable dependencies, and quality regressions as well as conventional outages.</p>
+          <p>Governance works best when embedded in these delivery and operating paths. A policy in a document is necessary; a safe default, visible control, and recorded decision are what make it real.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Evaluation and release discipline</h2>
-          <p>I think vibe testing is the default failure mode. The minimum system is simple:</p>
+          <h2 class="text-xl font-semibold">Build primitives that compound</h2>
+          <p>A platform creates value when each delivery leaves behind something that lowers the cost of the next one. Small primitives with stable interfaces often provide the greatest reuse:</p>
           <ul class="list-disc ml-5 space-y-2">
-            <li><strong>Define quality explicitly</strong>: correct, unacceptable, and “good enough”</li>
-            <li><strong>Use real examples early</strong>: synthetic data can help you start, but it misses real edge cases</li>
-            <li><strong>Run regressions</strong>: prompt changes, retrieval changes, tool changes, model upgrades</li>
-            <li><strong>Human review where needed</strong>: subjective outputs need humans in the loop</li>
-            <li><strong>Release gates and rollbacks</strong>: block releases below thresholds and roll back quickly</li>
+            <li>governed context contracts and permission-aware access</li>
+            <li>evaluation datasets, runners, and release checks</li>
+            <li>tracing conventions, audit records, and incident patterns</li>
+            <li>model routing, budgets, rate limits, and access controls</li>
+            <li>templates, examples, and runbooks drawn from shipped features</li>
           </ul>
-          <p>In my opinion a platform wins when this is easy and normal.</p>
+          <p>The interface and operating discipline are the durable product. Models, vendors, libraries, and internal implementations can change behind them.</p>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">What to standardize, and what not to standardize</h2>
-          <p>I think you should standardize the parts that repeat and reduce risk:</p>
-          <ul class="list-disc ml-5 space-y-2">
-            <li>context access and permissions</li>
-            <li>evaluation building blocks and release gates</li>
-            <li>tracing, audit, and incident response basics</li>
-            <li>governance boundaries and cost controls</li>
-          </ul>
-          <p>I do not think you should standardize one model, one vendor, or one agent framework. Those choices change too fast.</p>
+          <h2 class="text-xl font-semibold">Standardise selectively, and earn adoption</h2>
+          <p>Standardise where repetition is costly or risk is shared: context access, evaluation evidence, tracing, audit, incident basics, governance boundaries, and cost controls. Avoid locking every team to one model, vendor, or application framework when those choices are still moving quickly and use cases differ.</p>
+          <p>Adoption should come from usefulness. Teams choose the paved road when it is the fastest credible route to production. Fast onboarding, safe defaults, clear documentation, working examples, and responsive support create that pull. A platform that adds ceremony without removing delivery pain will be routed around.</p>
+          <p>Adoption is therefore a useful diagnostic. Low adoption may mean communication is weak, but it may also mean the platform solved an imagined problem. Stay close to product teams, watch where they lose time, and adjust the shared path.</p>
         </div>
 
         <div class="space-y-3">
           <h2 class="text-xl font-semibold">Common failure modes</h2>
           <ul class="list-disc ml-5 space-y-2">
-            <li><strong>Starting with a tool</strong> instead of a bottleneck</li>
-            <li><strong>Building too much</strong> before proving reuse</li>
-            <li><strong>Forcing adoption</strong> and creating quiet workarounds</li>
-            <li><strong>Shipping MVPs without evaluation</strong> and calling it done</li>
-            <li><strong>Ignoring cost</strong> until it spikes</li>
-            <li><strong>Adding capabilities before guardrails</strong> and auditability</li>
+            <li><strong>Starting with a purchase</strong> before identifying a delivery bottleneck</li>
+            <li><strong>Building for hypothetical reuse</strong> instead of extracting primitives from real features</li>
+            <li><strong>Forcing adoption</strong> and mistaking compliance for usefulness</li>
+            <li><strong>Treating the MVP as nearly done</strong> when evaluation, ownership, and operations are still missing</li>
+            <li><strong>Centralising product judgement</strong> in a platform team too far from users and domain risk</li>
+            <li><strong>Ignoring cost and auditability</strong> until scale or an incident makes them urgent</li>
           </ul>
         </div>
 
         <div class="space-y-3">
-          <h2 class="text-xl font-semibold">Closing opinion</h2>
-          <p>I think a good AI platform is boring in the best way. It is focused on discipline and compounding reuse. It lets teams move fast without breaking trust.</p>
-          <p>If you remember one thing, make it this: start from bottlenecks, invest in compounding primitives, and keep the platform pull based.</p>
+          <h2 class="text-xl font-semibold">The practical test</h2>
+          <p>A good AI platform is boring in the best way. It gives teams a repeatable route from a worthwhile problem to a trustworthy production feature. It concentrates scarce expertise in context, evaluation, operations, and governance without taking product ownership away from the people closest to the user.</p>
+          <p>The test is simple: after one team ships, can the next team move faster with less risk? Repeated improvements across teams show that the operating model is working. A mandated tool with no compounding benefit is just another dependency.</p>
         </div>
       </section>
     </article>

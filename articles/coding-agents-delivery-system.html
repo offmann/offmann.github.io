@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding agents need a delivery system - Field notes</title>
+  <meta name="description" content="A field report from affiliate-mcp on coordinating coding agents, review, repository state, and human decision-making." />
+  <meta name="keywords" content="coding agents, agentic software delivery, Claude Code, Codex, affiliate-mcp, AI code review, engineering management, Othman Bouzahzah" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://offmann.github.io/articles/coding-agents-delivery-system.html" />
+  <meta property="og:title" content="Coding agents need a delivery system" />
+  <meta property="og:description" content="What building affiliate-mcp taught me about coordinating coding agents, review, repository state, and human authority." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://offmann.github.io/articles/coding-agents-delivery-system.html" />
+  <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
+  <meta property="article:published_time" content="2026-06-19" />
+  <meta property="article:author" content="Othman Bouzahzah" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coding agents need a delivery system" />
+  <meta name="twitter:description" content="A field report on what happens when code generation gets faster than delivery coordination." />
+  <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S1X0SRBPXN', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    });
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Coding agents need a delivery system",
+    "description": "A field report from building affiliate-mcp with coding agents: faster code generation moved the bottleneck to delivery coordination, review, state, and human authority.",
+    "author": {"@type": "Person", "name": "Othman Bouzahzah"},
+    "datePublished": "2026-06-19",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://offmann.github.io/articles/coding-agents-delivery-system.html"},
+    "image": "https://offmann.github.io/preview.png"
+  }
+  </script>
+  <link rel="stylesheet" href="../site.css" />
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="./index.html" class="text-sm underline">Back to notes</a>
+      <a href="./index.html" class="text-sm hover:underline">Field notes</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-semibold leading-tight mb-3">Coding agents need a delivery system</h1>
+        <div class="flex items-center space-x-3">
+          <p class="text-sm text-gray-600">Published Jun 19, 2026</p>
+          <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-green-100 text-green-700 border-green-200">Case study</span>
+        </div>
+      </header>
+
+      <div class="mb-8 p-4 rounded-2xl border border-gray-200 bg-gray-50" data-article-audio="true">
+        <p class="text-sm text-gray-700 mb-2">Listen to summary</p>
+        <audio controls preload="none" class="w-full">
+          <source src="../audio/coding-agents-delivery-system.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p class="text-xs text-gray-500 mt-2"><a class="underline" href="../audio/coding-agents-delivery-system.mp3">Download audio</a></p>
+      </div>
+
+      <section class="space-y-6 leading-relaxed">
+        <p>I have been building <strong><a href="https://github.com/bobberrisford/affiliatemcp">affiliate-mcp</a></strong> with my collaborator and a few coding agents, mainly Claude Code and Codex. The repository is an MCP server for affiliate-network data, with dozens of adapters, several client surfaces, generated documentation, and multiple release formats.</p>
+
+        <p>The agents helped us write code faster. Coordination soon became the harder part: deciding what should ship, keeping parallel work coherent, reviewing changes, and knowing when a human had to make the call.</p>
+
+        <h2 class="text-xl font-semibold">The outcome became the unit of work</h2>
+
+        <p>A prompt and a branch work well for an isolated fix. Parallel changes need a clearer boundary. We define each workstream around one outcome, its owning layer, dependencies, failure modes, and excluded scope. The same thread inspects the repository, implements the change, validates it, reviews the diff, and prepares the handoff.</p>
+
+        <p>I keep a persistent Chief of Staff thread above those workstreams. It tracks active work, queued ideas, dependencies, reviews, and decisions that need me or my collaborator. The workstream threads handle patches. The Chief of Staff keeps the project map current.</p>
+
+        <h2 class="text-xl font-semibold">Repository skills became operating procedures</h2>
+
+        <p>We moved delivery rules into the repository. <code>AGENTS.md</code> explains the architecture, authoritative files, reading order, and decision boundaries. <code>delivery-steward</code> guides a bounded change from inspection to proof. <code>prepare-for-review</code> defines the evidence a pull request needs. <code>review-pr</code> checks contracts, correctness, tests, architecture, customer clarity, and documentation.</p>
+
+        <p>These files are version-controlled operating procedures. When a failure repeats, we improve the procedure once. Every future agent receives the same guidance. Git history also shows how the collaboration rules evolved.</p>
+
+        <h2 class="text-xl font-semibold">Human authority should follow risk</h2>
+
+        <p>Agents can make routine, isolated choices after reading the owning files and existing patterns. Public contracts, authentication, security, write actions, payments, deployment architecture, and cross-client behaviour receive human review.</p>
+
+        <p>Technical architecture and product trade-offs stay with me. Affiliate-domain truth and customer judgement stay with my collaborator. For consequential questions, the agent recommends a direction, explains the trade-offs, and escalates the decision. This gives agents room to work while preserving a clear audit trail.</p>
+
+        <h2 class="text-xl font-semibold">Reviewer agents can repair scoped issues</h2>
+
+        <p>A reviewer agent can often repair a small, clear defect itself. It inspects the branch, makes the smallest correction, runs focused checks, and reports what changed. This removes a slow handoff through a human.</p>
+
+        <p>The correction must be scoped, reversible, and supported by proof. The reviewer stays focused on the current outcome, and a human still controls the merge.</p>
+
+        <h2 class="text-xl font-semibold">Fast shipping creates drift</h2>
+
+        <p>affiliate-mcp has several distribution paths. The npm package carries the server, the plugin path carries skills and registration, and the MCP bundle serves Claude Desktop. A source change can work correctly while one release artefact or version reference stays stale.</p>
+
+        <p>We define an authority order for documentation: accepted decisions, policies and runbooks, shipped code and structured manifests, then plans and research. Generated documents are changed through their source. This keeps agents from following different documents that both look current.</p>
+
+        <p>Branch scheduling matters too. One pull request actively awaits my review while other work stays queued or in draft. Decisions and foundations land before dependent implementations. Release checks inspect the artefact users will receive.</p>
+
+        <h2 class="text-xl font-semibold">What I have learned</h2>
+
+        <p>Coding agents create work faster than a maintainer can safely absorb it. The practical gains come from bounded outcomes, persistent coordination state, repository procedures, independent review, clear decision rights, and disciplined releases.</p>
+
+        <p>The procedures still need judgement and regular pruning. Agents can do a remarkable amount inside clear boundaries. Building and steering those boundaries remains part of the engineering work.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-600 border-t border-gray-200">
+    <p>&copy; <span id="year"></span> Othman Bouzahzah</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

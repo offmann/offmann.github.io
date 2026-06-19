@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jottings – Articles by Othman Bouzahzah</title>
-  <meta name="description" content="Jottings on LLM engineering, ML/Data Science, and AI strategy by Othman Bouzahzah." />
+  <title>Field notes - articles by Othman Bouzahzah</title>
+  <meta name="description" content="Field notes on LLM engineering, ML/Data Science, and AI strategy by Othman Bouzahzah." />
   <meta name="keywords" content="LLM engineering articles, AI strategy, data science, MLOps, retrieval, RAG, evaluations, semantic search, recommender systems, Othman Bouzahzah" />
   <meta name="robots" content="index, follow" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'IBM Plex Mono', monospace; }
-  </style>
   <link rel="canonical" href="https://offmann.github.io/articles/" />
-  <meta property="og:title" content="Jottings – Articles by Othman Bouzahzah" />
-  <meta property="og:description" content="Jottings on LLM engineering, ML/Data Science, and AI strategy." />
+  <meta property="og:title" content="Field notes - articles by Othman Bouzahzah" />
+  <meta property="og:description" content="Field notes on LLM engineering, ML/Data Science, and AI strategy." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://offmann.github.io/articles/" />
   <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jottings – Articles by Othman Bouzahzah" />
-  <meta name="twitter:description" content="Jottings on LLM engineering, ML/Data Science, and AI strategy." />
+  <meta name="twitter:title" content="Field notes - articles by Othman Bouzahzah" />
+  <meta name="twitter:description" content="Field notes on LLM engineering, ML/Data Science, and AI strategy." />
   <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
   <script>
@@ -33,127 +33,83 @@
       page_path: window.location.pathname
     });
   </script>
+  <link rel="stylesheet" href="../site.css" />
 </head>
 <body class="bg-white text-gray-900">
   <header class="border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="../index.html" class="text-sm underline">← Back</a>
-      <span class="text-sm">Jottings</span>
+      <a href="../index.html" class="text-sm underline">Back to home</a>
+      <span class="text-sm">Field notes</span>
     </div>
   </header>
 
   <main class="py-12">
     <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-3xl font-semibold mb-8">Jottings</h1>
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Keep cards sorted newest → oldest -->
-        <!-- Article card (new) -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="ai-platform.html">An AI Platform for a Mid-Size Company: Pull, Not Push</a></h2>
-            <p class="text-xs text-gray-600"><time datetime="2026-02-06">Feb 6, 2026</time></p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">A practical blueprint for AI platforms: treat platform as an operating model, fix bottlenecks first, and keep adoption pull-based.</p>
-          <a class="text-sm underline text-blue-600" href="ai-platform.html">Read →</a>
+      <span class="eyebrow">Technical notebook</span>
+      <h1 class="text-3xl font-semibold mb-8">Field notes on useful AI systems.</h1>
+      <p class="section-kicker">Case studies, practice notes, technical guides, and looser ideas from the middle of building useful AI systems.</p>
+
+      <section class="featured-notes" aria-labelledby="featured-notes-title">
+        <h2 id="featured-notes-title" class="sr-only">Featured field notes</h2>
+        <article class="note-card featured">
+          <span class="tag">Case study</span>
+          <p class="note-date"><time datetime="2026-06-19">Jun 19, 2026</time></p>
+          <h2 class="text-2xl font-semibold mt-5 mb-4"><a href="coding-agents-delivery-system.html">Coding agents need a delivery system</a></h2>
+          <p>A field report on coordinating coding agents, review, repository state, and human authority while shipping a real open-source project.</p>
         </article>
-        <!-- Article card (new) -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="ai-failure-modes-four-lenses.html">AI Failure Modes: Four Lenses</a></h2>
-            <p class="text-xs text-gray-600"><time datetime="2026-01-06">Jan 6, 2026</time></p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-blue-100 text-blue-700 border-blue-200">LLM engineering</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">A simple checklist for where AI projects fail: the problem, the context, the model, and the tools.</p>
-          <a class="text-sm underline text-blue-600" href="ai-failure-modes-four-lenses.html">Read →</a>
-        </article>
-        <!-- Article card (new) -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="china-open-source-strategy.html">China’s Open Source Wave</a></h2>
-            <p class="text-xs text-gray-600"><time datetime="2025-11-14">Nov 14, 2025</time></p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">China uses open weight AI models to lock in developers, navigate export controls, and balance domestic oversight with global influence.</p>
-          <a class="text-sm underline text-blue-600" href="china-open-source-strategy.html">Read →</a>
-        </article>
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="non-tech-ai-next-two-years.html">If you work in a non-tech company, this is how AI will change in the next 2 years</a></h2>
-            <p class="text-xs text-gray-600"><time datetime="2025-11-10">Nov 10, 2025</time></p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">AI moves into the tools teams already use, a practical platform keeps it controlled, and governance decides who scales over the next two years.</p>
-          <a class="text-sm underline text-blue-600" href="non-tech-ai-next-two-years.html">Read →</a>
-        </article>
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="probabilistic-software.html">Building LLM Software Lives Between Two Worlds</a></h2>
-            <p class="text-xs text-gray-600">Nov 4, 2025</p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-blue-100 text-blue-700 border-blue-200">LLM engineering</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">Classic software is deterministic; LLM apps add a probabilistic core. If you’re a data scientist or a software engineer, you need skills from the other side to ship reliable products.</p>
-          <a class="text-sm underline text-blue-600" href="probabilistic-software.html">Read →</a>
-        </article>
-        <!-- Article card 1 -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="ai-changes-work.html">AI Changes Work. Here’s How I Think We Should Respond</a></h2>
-            <p class="text-xs text-gray-600">Oct 24, 2025</p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">AI shifts routine work to machines, making room for judgment, glue skills, and roles where humans stay in the loop.</p>
-          <a class="text-sm underline text-blue-600" href="ai-changes-work.html">Read →</a>
-        </article>
-        <!-- Article card 2 -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="economics-of-intelligence.html">The Economics of Intelligence-as-a-Service</a></h2>
-            <p class="text-xs text-gray-600">Oct 22, 2025</p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">What happens when reasoning becomes measurable and tradable — shifting value from human cognition to API-delivered units?</p>
-          <a class="text-sm underline text-blue-600" href="economics-of-intelligence.html">Read →</a>
-        </article>
-        <!-- Article card 3 -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="intelligece-as-commodity.html">Intelligence as a Commodity</a></h2>
-            <p class="text-xs text-gray-600">Oct 20, 2025</p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-purple-100 text-purple-700 border-purple-200">AI strategy</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">For most of history, intelligence was rare. Today, with LLMs, intelligence is an API — priced per question or per thousand tokens.</p>
-          <a class="text-sm underline text-blue-600" href="intelligece-as-commodity.html">Read →</a>
-        </article>
-        <!-- Article card 4 -->
-        <article class="bg-gray-50 shadow rounded-2xl p-6">
-          <header class="mb-2">
-            <h2 class="text-lg font-semibold"><a class="hover:underline" href="llm-dataset-creation.html">Datasets Creation at Scale</a></h2>
-            <p class="text-xs text-gray-600">Feb 12, 2025</p>
-            <div class="mt-2 space-x-2">
-              <span class="inline-block text-xs px-2 py-0.5 rounded-full border bg-green-100 text-green-700 border-green-200">ML/Data science</span>
-            </div>
-          </header>
-          <p class="text-sm text-gray-800 mb-4">Use structured outputs to add useful columns in bulk. Quality depends on prompt, schema, and model; validate with cross‑model agreement.</p>
-          <a class="text-sm underline text-blue-600" href="llm-dataset-creation.html">Read →</a>
-        </article>
-      </div>
+        <div class="stack">
+          <article class="note-card card">
+            <span class="tag">Practice note</span>
+            <p class="note-date">Published <time datetime="2026-02-06">Feb 6, 2026</time> · Updated <time datetime="2026-06-19">Jun 19, 2026</time></p>
+            <h2 class="text-xl font-semibold mt-4 mb-2"><a href="ai-platform.html">How to build an AI platform in a mid-sized or large company</a></h2>
+            <p>Build around delivery bottlenecks, governed context, evaluation, operations, and reusable primitives.</p>
+          </article>
+          <article class="note-card card">
+            <span class="tag">Technical guide</span>
+            <p class="note-date"><time datetime="2025-11-04">Nov 4, 2025</time></p>
+            <h2 class="text-xl font-semibold mt-4 mb-2"><a href="probabilistic-software.html">Building LLM software lives between two worlds</a></h2>
+            <p>Reliable LLM products need deterministic scaffolding and habits from both data science and software engineering.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notebook-section" aria-labelledby="more-notes-title">
+        <div class="notebook-heading">
+          <span class="eyebrow">More from the notebook</span>
+          <h2 id="more-notes-title">Earlier notes and working ideas.</h2>
+          <p>Some entries are developed guides; others are simply a record of what I was thinking at the time.</p>
+        </div>
+        <div class="notebook-list">
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Technical guide</span><time datetime="2026-01-06">Jan 6, 2026</time></div>
+            <div><h3><a href="ai-failure-modes-four-lenses.html">AI failure modes: four lenses</a></h3><p>A checklist for debugging the problem, context, model, and tools around an AI feature.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Note</span><time datetime="2025-11-14">Nov 14, 2025</time></div>
+            <div><h3><a href="china-open-source-strategy.html">China’s open source wave</a></h3><p>Personal analysis of open-weight models, developer ecosystems, export controls, and influence.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Note</span><time datetime="2025-11-10">Nov 10, 2025</time></div>
+            <div><h3><a href="non-tech-ai-next-two-years.html">If you work in a non-tech company, this is how AI will change in the next 2 years</a></h3><p>A dated forecast about embedded AI tools, platform capability, and governance.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Note</span><time datetime="2025-10-24">Oct 24, 2025</time></div>
+            <div><h3><a href="ai-changes-work.html">AI changes work. Here’s how I think we should respond</a></h3><p>Thoughts on routine work, human judgement, glue skills, and adapting organisations.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Note</span><time datetime="2025-10-22">Oct 22, 2025</time></div>
+            <div><h3><a href="economics-of-intelligence.html">The economics of intelligence-as-a-service</a></h3><p>Working questions about pricing, cost curves, value capture, and abundant reasoning.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Note</span><time datetime="2025-10-20">Oct 20, 2025</time></div>
+            <div><h3><a href="intelligece-as-commodity.html">Intelligence as a commodity</a></h3><p>An early essay about cheaper model capability and the physical infrastructure underneath it.</p></div>
+          </article>
+          <article class="notebook-item">
+            <div class="notebook-meta"><span class="tag">Practice note</span><time datetime="2025-02-12">Feb 12, 2025</time></div>
+            <div><h3><a href="llm-dataset-creation.html">Dataset creation at scale</a></h3><p>A compact pattern for enriching datasets with structured LLM outputs.</p></div>
+          </article>
+        </div>
+      </section>
     </div>
   </main>
 

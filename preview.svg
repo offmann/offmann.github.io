@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Othman Bouzahzah, data science and AI engineering consultant</title>
+  <desc id="description">A warm cream social card with teal and navy typography matching the website.</desc>
+  <rect width="1200" height="630" fill="#fbfaf6"/>
+
+  <circle cx="1080" cy="64" r="270" fill="#d8eee9" opacity="0.72"/>
+  <circle cx="1125" cy="75" r="178" fill="none" stroke="#0f766e" stroke-width="2" opacity="0.13"/>
+  <circle cx="1125" cy="75" r="112" fill="none" stroke="#243c5a" stroke-width="2" opacity="0.1"/>
+  <path d="M815 72C925 142 1000 238 1040 366C1068 452 1110 514 1200 560" fill="none" stroke="#0f766e" stroke-width="2" opacity="0.11"/>
+  <path d="M870 32C965 120 1030 210 1068 312" fill="none" stroke="#243c5a" stroke-width="2" opacity="0.08"/>
+
+  <g transform="translate(76 74)">
+    <circle cx="9" cy="9" r="9" fill="#0f766e"/>
+    <circle cx="9" cy="9" r="17" fill="none" stroke="#0f766e" stroke-width="2" opacity="0.18"/>
+    <text x="40" y="16" fill="#0d4f49" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.6">DATA SCIENCE &amp; AI ENGINEERING CONSULTANT</text>
+  </g>
+
+  <text x="76" y="238" fill="#17201d" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="600" letter-spacing="-1.8">
+    <tspan x="76" dy="0">I build useful products</tspan>
+    <tspan x="76" dy="72">with data and AI.</tspan>
+  </text>
+
+  <line x1="76" y1="395" x2="1124" y2="395" stroke="#0f766e" stroke-width="3" opacity="0.38"/>
+
+  <text x="76" y="470" fill="#243c5a" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Othman Bouzahzah</text>
+  <text x="76" y="520" fill="#66716b" font-family="Arial, Helvetica, sans-serif" font-size="25">LLM products  ·  Retrieval  ·  Evaluation  ·  AI platforms</text>
+
+  <g transform="translate(1068 516)" opacity="0.9">
+    <rect x="0" y="0" width="56" height="56" rx="18" fill="#243c5a"/>
+    <path d="M18 35V21h7.5c8.5 0 12.5 2.2 12.5 7s-4 7-12.5 7H18Z" fill="none" stroke="#fffaf0" stroke-width="3"/>
+    <circle cx="21" cy="28" r="3" fill="#d8eee9"/>
+  </g>
+</svg>

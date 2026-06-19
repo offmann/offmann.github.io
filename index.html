@@ -4,23 +4,27 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & Data Science Consulting – Othman Bouzahzah</title>
+  <title>AI engineering &amp; data science consultant | Othman Bouzahzah</title>
   <!-- Basic SEO -->
-  <meta name="description" content="From raw data to shipped LLM products, semantic search engines and recommender systems, end to end. Hands‑on LLM engineering, data science and strategy." />
+  <meta name="description" content="Independent AI and data science consulting for teams shipping LLM products, semantic search, recommender systems, and practical AI platforms." />
   <meta name="keywords" content="AI consultant, LLM engineering, RAG, retrieval, semantic search, recommender systems, data science, MLOps, NLP, LangSmith, evaluations, AWS, Azure, ETL, AI strategy, Othman Bouzahzah" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://offmann.github.io/" />
   <!-- OpenGraph -->
-  <meta property="og:title" content="AI & Data Science Consulting – Othman Bouzahzah" />
-  <meta property="og:description" content="From raw data to shipped LLM products, semantic search engines and recommender systems, end to end." />
+  <meta property="og:title" content="AI engineering &amp; data science consultant | Othman Bouzahzah" />
+  <meta property="og:description" content="Independent AI and data science consulting for teams shipping useful, measurable AI systems." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://offmann.github.io/" />
   <meta property="og:image" content="https://offmann.github.io/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI & Data Science Consulting – Othman Bouzahzah" />
-  <meta name="twitter:description" content="From raw data to shipped LLM products, semantic search engines and recommender systems, end to end." />
+  <meta name="twitter:title" content="AI engineering &amp; data science consultant | Othman Bouzahzah" />
+  <meta name="twitter:description" content="Independent AI and data science consulting for teams shipping useful, measurable AI systems." />
   <meta name="twitter:image" content="https://offmann.github.io/preview.png" />
+  <meta name="twitter:image:alt" content="Othman Bouzahzah, data science and AI engineering consultant" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1X0SRBPXN"></script>
   <script>
@@ -34,58 +38,95 @@
       page_path: window.location.pathname
     });
   </script>
-  <!-- Schema.org JSON‑LD for Person & Service -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Othman Bouzahzah","jobTitle":"AI & Data Science Consultant","url":"https://offmann.github.io/","sameAs":["https://www.linkedin.com/in/othman-bouzahzah"]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Othman Bouzahzah Consulting","url":"https://offmann.github.io/","description":"Hands-on AI and data science consulting, specialising in LLMs, RAG chatbots and MLOps.","areaServed":"Worldwide","serviceType":["LLM Product Engineering","Data Science & MLOps","AI Strategy"]}</script>
-  <!-- Tailwind CSS & font -->
+  <!-- Schema.org JSON-LD for Person & Service -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://offmann.github.io/#person","name":"Othman Bouzahzah","jobTitle":"Data Science and AI Engineering Consultant","url":"https://offmann.github.io/","email":"mailto:othmanbouzahzah@gmail.com","sameAs":["https://www.linkedin.com/in/othmanbouzahzah","https://github.com/offmann","https://x.com/othmanbouzahzah"],"knowsAbout":["AI engineering","Data science","Large language models","Retrieval-augmented generation","LLM evaluation","Semantic search","Recommender systems","MLOps"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://offmann.github.io/#consulting","name":"Othman Bouzahzah Consulting","url":"https://offmann.github.io/","email":"othmanbouzahzah@gmail.com","description":"Hands-on data science and AI engineering consulting for teams shipping reliable AI products.","areaServed":"Worldwide","provider":{"@id":"https://offmann.github.io/#person"},"serviceType":["LLM product engineering","Data science and MLOps","AI strategy and advisory"]}</script>
+  <!-- Tailwind CSS & site styles -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'IBM Plex Mono', monospace; }
-    /* Simple line clamp utility for testimonials */
     .clamp-5 { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
   </style>
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body class="bg-gray-50 text-gray-900">
   <!-- Navbar -->
   <header class="fixed w-full bg-white shadow-sm z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <a href="#" class="text-xl font-semibold">Othman Bouzahzah</a>
-      <nav class="space-x-6 hidden sm:block" aria-label="Main navigation">
-        <a href="#services" class="hover:underline">Services</a>
+    <div class="site-header max-w-6xl mx-auto flex items-center justify-between p-4">
+      <a href="#" class="brand-mark text-xl font-semibold">Othman Bouzahzah</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services" class="hover:underline">Work</a>
         <a href="#experience" class="hover:underline">Experience</a>
-        <a href="#demos" class="hover:underline">Demos</a>
-        <a href="#testimonials" class="hover:underline">Testimonials</a>
+        <a href="#field-notes" class="hover:underline">Field notes</a>
+        <a href="#proof" class="hover:underline">Proof</a>
         <a href="#about" class="hover:underline">About</a>
         <a href="#contact" class="hover:underline">Contact</a>
       </nav>
-      <a href="https://calendly.com/othmanbouzahzah/15min" class="sm:hidden inline-block bg-black text-white px-3 py-2 rounded-lg text-sm">Book call</a>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+          <a href="#services">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#field-notes">Field notes</a>
+          <a href="#proof">Proof</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="mobile-nav-cta" href="https://calendly.com/othmanbouzahzah/15min">Book a call</a>
+        </nav>
+      </details>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="pt-32 pb-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">AI & Data Science Consulting</h1>
-      <p class="text-lg md:text-2xl mb-8">From raw data to shipped LLM products, semantic search engines and recommender systems, end to end</p>
-      <a id="cta-hero-book-call" href="https://calendly.com/othmanbouzahzah/15min" class="inline-block bg-black text-white px-6 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 30‑min call</a>
-      <a id="cta-hero-read-mind" href="articles/index.html" class="mt-3 inline-block bg-gray-200 text-gray-900 px-6 py-4 rounded-lg text-lg hover:bg-gray-300">Read what's on my mind</a>
+  <section class="hero pt-32 pb-20 bg-white">
+    <div class="site-shell hero-layout">
+      <div>
+        <span class="eyebrow hero-role">Data science &amp; AI engineering consultant</span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">I build useful products with data and AI.</h1>
+        <p class="hero-copy text-lg md:text-2xl mb-8">I help teams turn messy data and half-working AI prototypes into reliable products that people can use.</p>
+        <div class="hero-actions">
+          <a id="cta-hero-book-call" href="https://calendly.com/othmanbouzahzah/15min" class="button inline-block bg-black text-white px-6 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 15-min call</a>
+          <a id="cta-hero-read-mind" href="articles/index.html" class="button button-secondary mt-3 inline-block bg-gray-200 text-gray-900 px-6 py-4 rounded-lg text-lg hover:bg-gray-300">Read the field notes</a>
+        </div>
+      </div>
+      <aside class="hero-note" aria-label="Working summary">
+        <strong>What I bring</strong>
+        <p>Hands-on engineering, product judgement, and experience taking AI systems from an early idea to production.</p>
+      </aside>
     </div>
   </section>
 
-
+  <!-- Principles -->
+  <section class="py-16 bg-gray-50" aria-label="Working principles">
+    <div class="site-shell">
+      <div class="principles">
+        <div class="principle">
+          <strong>Start with the work</strong>
+          <p>I map the workflow before choosing models, vendors, or architecture.</p>
+        </div>
+        <div class="principle">
+          <strong>Ship, then measure</strong>
+          <p>I get useful pilots in front of users, then measure and improve them.</p>
+        </div>
+        <div class="principle">
+          <strong>Stay understandable</strong>
+          <p>Teams should know what the system does, where it fails, and which trade-offs they accept.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Services -->
   <section id="services" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-12 text-center">How I can help</h2>
+    <div class="site-shell">
+      <span class="eyebrow">How I help</span>
+      <h2 class="text-3xl font-semibold mb-12 text-center">A practical mix of engineering, data, and strategy.</h2>
+      <p class="section-kicker">Most AI work fails in the handoff between idea, data, product, and production. I work across that handoff.</p>
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="bg-white shadow rounded-2xl p-6">
+        <div class="service-card bg-white shadow rounded-2xl p-6">
           <h3 class="text-xl font-semibold mb-2">LLM Product Engineering</h3>
-          <p class="mb-4">I design and ship LLM applications: RAG chatbots, knowledge assistants, and LLM eval suites tailored to your data and use case. Quick wins that move the needle, from early pilots to 10k-user rollouts</p>
+          <p class="mb-4">I design and ship LLM applications: RAG chatbots, knowledge assistants, and LLM eval suites tailored to your data and use case. Quick wins that move the needle, from early pilots to 10k-user rollouts.</p>
           <details class="text-sm text-gray-700">
-            <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+            <summary class="cursor-pointer mb-2 hover:underline">What this can include</summary>
             <ul class="list-disc ml-4 mt-2 space-y-1">
               <li>Retrieval pipelines (vector, hybrid, graph, search tuning from logs)</li>
               <li>Evaluation frameworks (LangSmith, custom)</li>
@@ -94,12 +135,11 @@
             </ul>
           </details>
         </div>
-        <!-- Service 2 -->
-        <div class="bg-white shadow rounded-2xl p-6">
+        <div class="service-card bg-white shadow rounded-2xl p-6">
           <h3 class="text-xl font-semibold mb-2">Data Science & MLOps</h3>
-          <p class="mb-4">I turn messy data into structured, usable datasets and build semantic search and recommender systems on top, using LLMs as a swiss-army knife for feature engineering, enrichment, and large-scale dataset creation.</p>
+          <p class="mb-4">I turn messy data into structured, usable datasets and build semantic search and recommender systems on top, using LLMs for feature engineering, enrichment, and large-scale dataset creation.</p>
           <details class="text-sm text-gray-700">
-            <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+            <summary class="cursor-pointer mb-2 hover:underline">What this can include</summary>
             <ul class="list-disc ml-4 mt-2 space-y-1">
               <li>Data products from unstructured sources (tickets, logs, product feeds, documents)</li>
               <li>LLM-powered labelling, feature engineering, and enrichment at scale</li>
@@ -108,12 +148,11 @@
             </ul>
           </details>
         </div>
-        <!-- Service 3 -->
-        <div class="bg-white shadow rounded-2xl p-6">
+        <div class="service-card bg-white shadow rounded-2xl p-6">
           <h3 class="text-xl font-semibold mb-2">AI Strategy & Advisory</h3>
-          <p class="mb-4">I help you pick the right AI bets, build a realistic roadmap, align stakeholders, and grow teams around AI initiatives from early experiments to production rollouts, while staying hands-on the implementation.</p>
+          <p class="mb-4">I help teams pick the right AI bets, build a realistic roadmap, align stakeholders, and grow internal capability while staying close enough to the implementation to keep the advice honest.</p>
           <details class="text-sm text-gray-700">
-            <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+            <summary class="cursor-pointer mb-2 hover:underline">What this can include</summary>
             <ul class="list-disc ml-4 mt-2 space-y-1">
               <li>ROI and risk workshops grounded in your data and workflows</li>
               <li>Use-case discovery and prioritisation (what to build first, what to skip)</li>
@@ -126,165 +165,188 @@
     </div>
   </section>
 
-<!-- Selected Work as 2x2 grid matching service cards style -->
-<section id="experience" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold mb-12 text-center">Selected Work</h2>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Awin -->
-      <div class="bg-gray-50 shadow rounded-2xl p-6">
-        <h3 class="text-xl font-semibold mb-2">Awin AG – AI/ML Staff Engineer</h3>
-        <p class="mb-4">Led org‑wide AI initiatives; scaled RAG chatbots, improved forecasting, and mentored engineers.</p>
-        <details class="text-sm text-gray-700">
-          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
-          <ul class="list-disc ml-4 mt-2 space-y-1">
-            <li>Built retrieval pipelines and evaluation framework for RAG chatbot</li>
-            <li>Designed indexing pipelines to curate a robust knowledge base</li>
-            <li>[NLP] Investigated customer cases to identify patterns and fix root causes</li>
-            <li>Improved forecasting and recommender ML models</li>
-            <li>Hired AI‑focused data and QA engineers; shaped AI strategy</li>
-          </ul>
-        </details>
+  <!-- Selected Work -->
+  <section id="experience" class="py-20 bg-white">
+    <div class="site-shell">
+      <span class="eyebrow">Selected work</span>
+      <div class="selected-work-intro">
+        <h2>A career across data, AI, and product.</h2>
+        <p>I have worked across marketing, retail, banking, and SaaS, usually in the messy middle between data science, product, and engineering.</p>
       </div>
-
-      <!-- affiliate.ai -->
-      <div class="bg-gray-50 shadow rounded-2xl p-6">
-        <h3 class="text-xl font-semibold mb-2">affiliate.ai – AI Engineer</h3>
-        <p class="mb-4">Shipped Slack/Teams LLM-based bots for affiliate marketing </p>
-        <details class="text-sm text-gray-700">
-          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
-          <ul class="list-disc ml-4 mt-2 space-y-1">
-            <li>Implemented LLM features with function calling (LangChain)</li>
-            <li>Designed RAG over SQL/APIs and unstructured sources</li>
-            <li>Built LLM evaluation using LangSmith</li>
-            <li>Developed ETL pipelines for Awin, Impact, CJ, Rakuten, ShareASale</li>
-            <li>Owned product/tech trade‑offs; maintained AWS (Beanstalk, S3, RDS)</li>
-          </ul>
-        </details>
+      <div class="work-cards">
+          <div class="work-card bg-gray-50 shadow rounded-2xl p-6">
+            <p class="work-meta">Awin Global · Freelance · Oct 2024 to present</p>
+            <h3 class="text-xl font-semibold mb-2">AI/ML Staff Engineer</h3>
+            <p class="mb-4">Architecting and delivering production AI systems across RAG, agents, evaluation, and reusable platform capabilities.</p>
+            <details class="text-sm text-gray-700">
+              <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+              <ul class="list-disc ml-4 mt-2 space-y-1">
+                <li>Built and evolved Awin's AI assistant with LangGraph and Deep Agent</li>
+                <li>Designed hybrid retrieval and semantic search on AWS and Azure</li>
+                <li>Built reusable evaluation workflows with CI gates, human review, LangSmith, and Langfuse</li>
+                <li>Shaped platform patterns for model access, observability, governance, cost tracking, and quotas</li>
+                <li>Supported recommender systems, classification, hiring, mentoring, and AI strategy</li>
+              </ul>
+            </details>
+          </div>
+          <div class="work-card bg-gray-50 shadow rounded-2xl p-6">
+            <p class="work-meta">affiliate.ai · Freelance · May 2023 to Oct 2024</p>
+            <h3 class="text-xl font-semibold mb-2">AI Engineer</h3>
+            <p class="mb-4">Built an affiliate-marketing assistant delivered through Slack and Microsoft Teams.</p>
+            <details class="text-sm text-gray-700">
+              <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+              <ul class="list-disc ml-4 mt-2 space-y-1">
+                <li>Implemented LLM features and function calling with LangChain</li>
+                <li>Designed RAG across SQL, APIs, and unstructured documents</li>
+                <li>Built evaluation workflows with LangSmith</li>
+                <li>Integrated Awin, Impact, CJ, Rakuten, and ShareASale data</li>
+                <li>Contributed to product decisions and AWS operations</li>
+              </ul>
+            </details>
+          </div>
+          <div class="work-card bg-gray-50 shadow rounded-2xl p-6">
+            <p class="work-meta">SFEIR · Permanent · Dec 2021 to Apr 2023</p>
+            <h3 class="text-xl font-semibold mb-2">Data Scientist and Consultant</h3>
+            <p class="mb-4">Scoped and delivered data science projects for retail, then explored early generative AI use cases.</p>
+            <details class="text-sm text-gray-700">
+              <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+              <ul class="list-disc ml-4 mt-2 space-y-1">
+                <li>Ran scoping workshops with business teams at Leroy Merlin</li>
+                <li>Built training, prediction, and evaluation pipelines</li>
+                <li>Deployed models in batch and real time</li>
+                <li>Designed business KPIs, monitoring, and dashboards</li>
+                <li>Benchmarked LLMs and prototyped semantic search over PDFs</li>
+              </ul>
+            </details>
+          </div>
+          <div class="work-card bg-gray-50 shadow rounded-2xl p-6">
+            <p class="work-meta">Banque Populaire du Nord · Sep 2018 to Oct 2021</p>
+            <h3 class="text-xl font-semibold mb-2">Data Scientist</h3>
+            <p class="mb-4">Built customer analytics and NLP systems for relationship marketing and banking teams.</p>
+            <details class="text-sm text-gray-700">
+              <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
+              <ul class="list-disc ml-4 mt-2 space-y-1">
+                <li>Developed customer scores and segmentations from ideation through MLOps</li>
+                <li>Built an NLP backend for advisor-client reports and CRM follow-up</li>
+                <li>Created Power BI reporting for business users</li>
+                <li>Mentored an intern and shipped a recommendation API</li>
+                <li>Presented data work to business and technical communities</li>
+              </ul>
+            </details>
+          </div>
       </div>
-
-      <!-- SFEIR -->
-      <div class="bg-gray-50 shadow rounded-2xl p-6">
-        <h3 class="text-xl font-semibold mb-2">SFEIR – Data Science Consultant</h3>
-        <p class="mb-4">Led PoCs around NLP & Customer Segmentation</p>
-        <details class="text-sm text-gray-700">
-          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
-          <ul class="list-disc ml-4 mt-2 space-y-1">
-            <li>Facilitated scoping workshops with business stakeholders</li>
-            <li>Built training, prediction and evaluation pipelines</li>
-            <li>Deployed models in batch and real‑time</li>
-            <li>Designed KPIs and dashboards for observability</li>
-            <li>Shared knowledge via talks and internal presentations</li>
-          </ul>
-        </details>
-      </div>
-
-      <!-- BPCE -->
-      <div class="bg-gray-50 shadow rounded-2xl p-6">
-        <h3 class="text-xl font-semibold mb-2">BPCE – Junior Data Scientist</h3>
-        <p class="mb-4">Delivered NLP and analytics PoCs</p>
-        <details class="text-sm text-gray-700">
-          <summary class="cursor-pointer mb-2 hover:underline">More details</summary>
-          <ul class="list-disc ml-4 mt-2 space-y-1">
-            <li>Customer scoring/segmentation from ideation to MLOps</li>
-            <li>NLP backend for advisor–client reports; PowerBI dashboarding</li>
-            <li>Mentored intern; shipped REST API for model serving</li>
-            <li>Email intent classification pipeline for satisfaction</li>
-            <li>Evangelised data via workshops and presentations</li>
-          </ul>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Demos -->
-  <section id="demos" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-6 text-center">Demo videos</h2>
-      <ul class="list-disc ml-4 space-y-4 text-lg">
-        <li>
-          <a href="https://www.loom.com/share/b4661e498d714798b118dd146d9031c7?sid=20de51a0-540b-4869-b819-e87f2f1db093" target="_blank" class="text-blue-600 underline">Awin Global chatbot & analytics demo</a>
-        </li>
-        <li>
-          <a href="https://www.loom.com/share/ac6ccb3ad95647bf99d8b8a7463eeaee?sid=5fda60f8-3156-43b9-a37b-367555152a15" target="_blank" class="text-blue-600 underline">Artificial Eye – text‑to‑image walkthrough</a>
-        </li>
-        <li>
-          <a href="https://www.loom.com/share/22a526743d6345bf965a83942549d9a7?sid=c0d4d014-6b22-443a-a704-209da2c0b13a" target="_blank" class="text-blue-600 underline">Sfeir – LLM PoC & semantic search</a>
-        </li>
-      </ul>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-12 text-center">Testimonials</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Card 1 -->
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
-          <p class="mb-4 testimonial-text clamp-5">“Othman is a first-class Data Scientist and engineering team member.<br><br>
+  <!-- Field Notes -->
+  <section id="field-notes" class="py-20 bg-gray-50">
+    <div class="site-shell">
+      <span class="eyebrow">Field notes</span>
+      <h2 class="text-3xl font-semibold mb-12 text-center">Writing is part of the work.</h2>
+      <p class="section-kicker">I use the blog to think in public about LLM engineering, AI platforms, evaluation, and probabilistic software.</p>
+      <div class="writing-preview">
+        <article class="note-card featured">
+          <span class="tag">Case study</span>
+          <p class="note-date"><time datetime="2026-06-19">Jun 19, 2026</time></p>
+          <h2 class="text-2xl font-semibold mt-5 mb-4"><a href="articles/coding-agents-delivery-system.html">Coding agents need a delivery system</a></h2>
+          <p>A field report on coordinating Claude Code, Codex, review, repository state, and human authority while shipping a real open-source project.</p>
+        </article>
+        <div class="stack">
+          <article class="note-card card">
+            <span class="tag">Practice note</span>
+            <p class="note-date">Published <time datetime="2026-02-06">Feb 6, 2026</time> · Updated <time datetime="2026-06-19">Jun 19, 2026</time></p>
+            <h2 class="text-xl font-semibold mt-4 mb-2"><a href="articles/ai-platform.html">How to build an AI platform in a mid-sized or large company</a></h2>
+            <p>Start from delivery bottlenecks, then build the context, evaluation, operations, and reusable primitives that help teams ship.</p>
+          </article>
+          <article class="note-card card">
+            <span class="tag">Technical guide</span>
+            <p class="note-date"><time datetime="2025-11-04">Nov 4, 2025</time></p>
+            <h2 class="text-xl font-semibold mt-4 mb-2"><a href="articles/probabilistic-software.html">Building LLM software lives between two worlds</a></h2>
+            <p>Classic software is deterministic; LLM applications add a probabilistic core that needs habits from data science and software engineering.</p>
+          </article>
+          <a class="button button-secondary px-6 py-4" href="articles/index.html">Browse all field notes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section id="proof" class="py-20 bg-gray-50">
+    <div class="site-shell">
+      <span class="eyebrow">Proof of work</span>
+      <h2 class="text-3xl font-semibold mb-6 text-center">A few demos and references.</h2>
+      <p class="section-kicker">Practical walkthroughs and references that show how the systems behave.</p>
+      <div class="work-grid">
+        <div>
+          <ul class="proof-list text-lg">
+            <li><a href="https://www.loom.com/share/b4661e498d714798b118dd146d9031c7?sid=20de51a0-540b-4869-b819-e87f2f1db093" target="_blank" rel="noopener">Awin Global chatbot & analytics demo</a></li>
+            <li><a href="https://github.com/bobberrisford/affiliatemcp" target="_blank" rel="noopener">affiliate-mcp open-source repository</a></li>
+            <li><a href="https://www.loom.com/share/22a526743d6345bf965a83942549d9a7?sid=c0d4d014-6b22-443a-a704-209da2c0b13a" target="_blank" rel="noopener">Sfeir - LLM PoC & semantic search</a></li>
+          </ul>
+        </div>
+        <div class="grid gap-4">
+          <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+            <p class="mb-4 testimonial-text clamp-5">“Othman is a first-class Data Scientist and engineering team member.<br><br>
 He has an excellent work ethic, and unwavering dedication to his colleagues and work.<br><br>
 I had the pleasure of working with him on a new generative AI solution designed to meet the needs of thousands of customers.<br><br>
-At the time of writing (March 2025), building generative AI applications can be highly complex, with a multitude of unknowns and unpredictable outcomes due to the probablistic nature of generative AI models.<br><br>
+At the time of writing (March 2025), building generative AI applications can be highly complex, with a multitude of unknowns and unpredictable outcomes due to the probabilistic nature of generative AI models.<br><br>
 As a key member in our team, Othman designed and implemented our evaluations methodology and technology stack. His work has been invaluable to understanding the performance and optimization requirements for our solution. Beyond his technical expertise, Othman is a superb communicator, adept at speaking to counterparts at all levels in our organization, from the most technically proficient, to critical non-technical stakeholders.<br><br>
-I am well aware that Othman's skillsets extend far beyond the remit that we have worked together. Beyond the evaluations work, he also conducts deep quantative analysis of unstructured data to obtain meaningful business insights.<br><br>
+I am well aware that Othman's skillsets extend far beyond the remit that we have worked together. Beyond the evaluations work, he also conducts deep quantitative analysis of unstructured data to obtain meaningful business insights.<br><br>
 I highly recommend Othman as an experienced and trusted colleague.”</p>
-          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
-          <footer class="mt-4 text-sm text-gray-700">— James Bentley, AI Strategy Director, Awin Global</footer>
-        </blockquote>
-        <!-- Card 2 -->
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
-          <p class="mb-4 testimonial-text clamp-5">“Othman is in the top 1% of engineers and humans I have ever worked with. If you are lucky enough to have the opportunity to do so, work with Othman.”</p>
-          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
-          <footer class="mt-4 text-sm text-gray-700">— Rob Berrisford, CEO, affiliate.ai</footer>
-        </blockquote>
-        <!-- Card 3 -->
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
-          <p class="mb-4 testimonial-text clamp-5">“Othman est quelqu'un de curieux, autonome, qui a à cœur de réaliser ses projets le mieux possible, et que ceux-ci aient un impact réel dans les métiers utilisateurs.<br><br>
-Il n'hésite pas à partager son savoir qu'il acquiert par de l'autoformation permanente, en tant que datascientist et technophile avéré.”</p>
-          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
-          <footer class="mt-4 text-sm text-gray-700">— Marie Lefebvre, Directrice de projets Data / Engagement Manager, BPCE</footer>
-        </blockquote>
-        <!-- Card 4 -->
-        <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
-          <p class="mb-4 testimonial-text clamp-5">“Othman est un collaborateur brillant et intelligent. Il est autonome et créatif dans ses projets. A l'aise à l'oral et doté d'un vrai sens de la pédagogie il sait rendre accessible ses projets afin d'acculturer son auditoire. C'est un vrai plaisir de travailler avec lui au quotidien.”</p>
-          <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
-          <footer class="mt-4 text-sm text-gray-700">— Léa Vanbeversluys, Directrice E‑Business, BPCE</footer>
-        </blockquote>
+            <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+            <footer class="mt-4 text-sm text-gray-700">James Bentley, AI Strategy Director, Awin Global</footer>
+          </blockquote>
+          <blockquote class="bg-gray-100 p-6 rounded-2xl shadow h-full flex flex-col testimonial-card">
+            <p class="mb-4 testimonial-text clamp-5">“Othman is in the top 1% of engineers and humans I have ever worked with. If you are lucky enough to have the opportunity to do so, work with Othman.”</p>
+            <button type="button" class="text-sm underline self-start toggle-clamp" aria-expanded="false">Read more</button>
+            <footer class="mt-4 text-sm text-gray-700">Rob Berrisford, CEO, affiliate.ai</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:space-x-12">
-      <div class="flex-1 mb-8 md:mb-0">
-        <h2 class="text-3xl font-semibold mb-4">About me</h2>
-        <p class="mb-4">I’m a freelance AI & data science consultant with six years of experience in marketing, retail, and SaaS. I design and ship LLM products, data pipelines, and recommender systems end to end, from messy data to production. I sit between strategy and engineering, helping teams choose the right AI bets and actually get them shipped.</p>
-        <p class="mb-4">Off the keyboard, I’m a distance runner and philosophy‑language nerd who loves quirky questions.</p>
+    <div class="site-shell">
+      <div class="about-card">
+        <div class="about-primary">
+          <span class="eyebrow">About</span>
+          <h2 class="text-3xl font-semibold mb-4">A technical partner for the fuzzy middle.</h2>
+          <p class="mb-4">I’m a freelance AI and data science consultant with more than seven years of experience across banking, retail, marketing, and SaaS. I design and ship LLM products, data pipelines, and recommender systems end to end, from messy data to production.</p>
+          <p class="mb-4">I sit between strategy and engineering, helping teams choose the right AI bets and actually get them shipped.</p>
+        </div>
+        <div class="about-human">
+          <h3 class="text-xl font-semibold mb-3">A little human context</h3>
+          <div class="about-human-copy">
+            <p class="mb-4">Off the keyboard, I’m a distance runner and philosophy-language nerd who loves quirky questions.</p>
+            <p>I like working with teams who want straight thinking, practical systems, and a light enough tone that the work stays fun.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact / CTA -->
   <section id="contact" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-semibold mb-6">Ready to discuss your AI challenge?</h2>
-      <p class="mb-8">Let’s explore how we can move your metrics with LLMs & data science—together.</p>
-      <a href="https://calendly.com/othmanbouzahzah/15min" target="_blank" rel="noopener" class="inline-block bg-black text-white px-8 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 30‑min call</a>
-      <div class="mt-4 space-x-6 text-sm">
-        <a class="underline" href="https://x.com/othmanbouzahzah" target="_blank" rel="noopener">X</a>
-        <a class="underline" href="https://www.linkedin.com/in/othmanbouzahzah" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="underline" href="https://github.com/offmann" target="_blank" rel="noopener">GitHub</a>
+    <div class="site-shell text-center">
+      <div class="contact-panel">
+        <span class="eyebrow">Start a conversation</span>
+        <h2 class="text-3xl font-semibold mb-6">Have an AI system to clarify, rescue, or ship?</h2>
+        <p class="mb-8">Bring the messy version. We can talk through the workflow, the data, the risks, and what a useful first step would look like.</p>
+        <a href="https://calendly.com/othmanbouzahzah/15min" target="_blank" rel="noopener" class="button inline-block bg-black text-white px-8 py-4 rounded-lg text-lg hover:bg-gray-800">Book a 15-min call</a>
+        <div class="mt-6 space-x-6 text-sm">
+          <a class="underline" href="mailto:othmanbouzahzah@gmail.com">Email</a>
+          <a class="underline" href="https://x.com/othmanbouzahzah" target="_blank" rel="noopener">X</a>
+          <a class="underline" href="https://www.linkedin.com/in/othmanbouzahzah" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="underline" href="https://github.com/offmann" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="py-8 bg-gray-50 text-center text-sm text-gray-600">
-    <p>&copy; <span id="year"></span> Not just a consultant, a partner.</p>
+    <p>&copy; <span id="year"></span> Othman Bouzahzah. AI systems, field notes, and useful questions.</p>
   </footer>
 
   <script>
