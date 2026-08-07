@@ -1,6 +1,5 @@
-# othman bouzahzah's resume
+# Othman Bouzahzah — portfolio and field notes
 
-welcome to the repository for my personal resume website.
-this site showcases my professional background, skills, and experiences.
+Source for my consulting portfolio and field notes on LLM engineering, AI platforms, evaluation, data products, and shipping with coding agents.
 
-**link**: [https://offmann.github.io](https://offmann.github.io)
+**Live site:** [https://offmann.github.io](https://offmann.github.io)
